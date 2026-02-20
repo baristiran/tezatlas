@@ -17,8 +17,11 @@ links_to:
   - skills/core/quality-control.md
   - skills/techniques/snowball-sampling.md
   - skills/techniques/session-structure.md
+  - skills/techniques/critical-reading.md
+  - skills/techniques/argument-evaluation.md
   - skills/templates/tpl-notlar.md
   - skills/tooling/annas-archive.md
+  - skills/tooling/database-access.md
 used_by:
   - skills/moc/MOC-phases.md
   - skills/phases/phase-5-protocol.md
@@ -35,6 +38,9 @@ Bu fazı uygulamadan ÖNCE şu dosyaları oku:
 
 - `skills/techniques/session-structure.md` — oturum başı/sonu ritüeli, tam protokol
 - `skills/tooling/git-workflow.md` — oturum sonu zorunlu commit prosedürü
+- `skills/techniques/critical-reading.md` — Faz 6'da yeni kaynak okunduğunda eleştirel değerlendirme
+- `skills/techniques/argument-evaluation.md` — bölüm yazıldıktan sonra argüman mantık kontrolü
+- `skills/tooling/database-access.md` — yazım sırasında bulunamayan kaynak için fallback zinciri
 
 ## Amaç
 

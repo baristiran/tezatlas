@@ -14,6 +14,7 @@ outputs:
 links_to:
   - skills/moc/MOC-disciplines.md
   - skills/techniques/argument-mapping.md
+  - skills/techniques/argument-evaluation.md
   - skills/templates/tpl-yapi-taslagi.md
   - skills/templates/tpl-kaynak-haritasi.md
   - skills/core/academic-integrity.md
@@ -29,9 +30,10 @@ version: "2.1"
 
 ## Bu Fazda Yüklenecek Node'lar
 
-Bu fazı uygulamadan ÖNCE şu dosyayı oku:
+Bu fazı uygulamadan ÖNCE şu dosyaları oku:
 
 - `skills/techniques/argument-mapping.md` — okuma notlarından yapı çıkarma tekniği (5 adım: küme → RQ eşleme → boşluk tespiti → bölüm sınırları → yapi_taslagi)
+- `skills/techniques/argument-evaluation.md` — yapı taslağındaki argümanların mantıksal kalitesini test et (zincir bütünlüğü, çelişki tespiti, karşı argüman kontrolü)
 
 ## Amaç
 
