@@ -4,6 +4,17 @@
 
 TezAtlas, bir yüksek lisans veya doktora öğrencisinin tezini AI ile birlikte yazmasını sağlar. Sıfırdan başlayıp savunmaya hazır bir teze kadar her adımı yönlendirir: konu belirleme, kaynak bulma, okuma, yapı tasarımı ve bölüm yazımı.
 
+> **⚠️ Beta — Gerçek tez projelerinde henüz test edilmemiştir.**
+> Deneyimlerinizi, hatalarınızı ve önerilerinizi [Issues](https://github.com/baristiran/tezatlas/issues) üzerinden paylaşırsanız sistem gelişir.
+
+---
+
+## Neden Bu Mimari?
+
+Monolitik tek-dosya yaklaşımları (10.000–20.000 satır prompt) pratikte üç soruna yol açıyor: AI tüm context'i tek oturumda tüketiyor, dosya güncellenmez hale geliyor, öğrenci neyin nerede olduğunu bulamıyor.
+
+TezAtlas aynı işlevselliği birbirine bağlı ~80 satırlık node'lara böler. AI her seferinde yalnızca o an gerekli 5–7 node'u yükler (~400–600 token), hepsini değil. Sistem bu tasarım kararının test edilmesi amacıyla açık kaynak olarak yayınlanmıştır — gerçek kullanım geri bildirimleri mimarinin olgunlaşmasını sağlayacak.
+
 ---
 
 ## Kimler İçin?
