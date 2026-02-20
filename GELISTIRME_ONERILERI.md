@@ -15,3 +15,6 @@ Durum: Uygulandi (`skills/phases/phase-1-topic.md`, `.claude/commands/tez-baslat
 
 4. Faz 2'de kaynak envanteri olustururken AI'a dosya adlarini kendi adlandirma kuralina gore guncelleme yetkisi ver.
 Durum: Uygulandi (`skills/phases/phase-2-sources.md`, `skills/templates/tpl-kaynak-envanteri.md`).
+
+5. Faz 3 not dosyalari kok dizinde degil `notlar/` klasorunde tutulmali.
+Durum: Uygulandi (`skills/phases/phase-3-reading.md`, `skills/templates/tpl-notlar.md`).

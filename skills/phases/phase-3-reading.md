@@ -9,7 +9,7 @@ description: "A cyclic reading loop combining systematic source reading, page-nu
 description_tr: "Sistematik kaynak okuma, sayfa numaralı not alma ve dipnot takibiyle yeni kaynak keşfini birleştiren döngüsel okuma sürecidir. Bu faz, doygunluk algılanana kadar süren bir DÖNGÜDÜR."
 tags: [phase, reading, snowball-sampling, saturation, note-taking, cyclic, loop]
 outputs:
-  - "_notlar.md dosyaları (bölüm/kaynak gruplarına göre)"
+  - "notlar/ altında _notlar.md dosyaları (bölüm/kaynak gruplarına göre)"
   - OKUMA_RAPORU.md
   - "Güncellenmiş KAYNAK_ENVANTERI.md"
 links_to:
@@ -27,7 +27,7 @@ used_by:
   - skills/phases/phase-2-sources.md
   - skills/phases/phase-4-structure.md
 language: bilingual
-version: "2.1"
+version: "2.2"
 ---
 
 # Faz 3 — Okuma ve Kartopu Keşif / Phase 3 — Reading and Snowball Discovery
@@ -54,11 +54,11 @@ Kaynak kuyruğundan bir PDF seç
   ↓
 [[pdf-reading]] protokolüyle ön kontrol (metin tabanlı mı? OCR gerekli mi?)
   ↓
-Kaynak oku → sayfa numaralı notlar çıkar → [[tpl-notlar]] formatında _notlar.md'ye yaz
+Kaynak oku → sayfa numaralı notlar çıkar → [[tpl-notlar]] formatında `notlar/` altına _notlar.md yaz
   ↓
 [[critical-reading]]: Eleştirel değerlendirme yap
   → Kaynak güvenilirliği rubriği
-  → "Bu kaynakla hemfikirim / değilim çünkü..." → _notlar.md'ye kaydet
+  → "Bu kaynakla hemfikirim / değilim çünkü..." → `notlar/` altındaki _notlar.md'ye kaydet
   → Tezde nasıl konumlandıracağım: Destek / Karşı / Arka plan
   ↓
 [[snowball-sampling]] algoritması: dipnotları tara → yeni kaynaklar keşfet
@@ -97,7 +97,7 @@ Mümkün olduğunca birincil kaynak (orijinal eser) tercih et. Birincil bulunama
 
 ## Çıktılar
 
-- `_notlar.md` dosyaları — şablon: [[tpl-notlar]]
+- `notlar/` altında `_notlar.md` dosyaları — şablon: [[tpl-notlar]]
 - `OKUMA_RAPORU.md` — doygunluk metrikleri, okunan PDF listesi, kartopu keşifleri — şablon: [[tpl-okuma-raporu]]
 - Güncellenmiş `KAYNAK_ENVANTERI.md`
 

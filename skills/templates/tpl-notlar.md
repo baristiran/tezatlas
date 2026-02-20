@@ -17,10 +17,13 @@ used_by:
   - skills/phases/phase-6-writing.md
   - skills/techniques/pdf-reading.md
 language: bilingual
-version: "2.2"
+version: "2.3"
 ---
 
 # Şablon: _notlar.md
+
+Bu dosya kök dizinde değil, `notlar/` klasörü altında oluşturulmalıdır.
+Örnek: `notlar/BIS_2020_CBDC_Foundational_Principles_Core_Features_notlar.md`
 
 ```markdown
 # Kaynak Notları: [Alt Bölüm Adı]
