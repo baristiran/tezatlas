@@ -63,7 +63,11 @@ cd tezatlas
 ./scripts/install.sh
 ```
 
-Windows kullanıyorsan Git Bash veya WSL terminali aç, aynı komutu çalıştır.
+Windows kullanıyorsan WSL (Windows Subsystem for Linux) terminalini aç ve şunu yaz:
+```bash
+cd tezatlas
+bash scripts/install.sh
+```
 
 Ekranda şu mesajı görürsen kurulum tamamdır:
 ```
@@ -126,8 +130,9 @@ AI, sanki `/tez-baslat` yazılmış gibi süreci başlatacak.
 
 **Adım 4 — Sonraki oturumlarda**
 
-Her yeni oturumda AI'na şunu söyle:
-> "tezatlas/skills/core/context-management.md dosyasını oku ve talimatları uygula. Tez projem: [MEMORY.md ve DURUM_OZETI.md dosyalarının içeriğini buraya yapıştır]"
+İlk oturumdan sonra `MEMORY.md` ve `DURUM_OZETI.md` adında iki dosya oluşacak — bunlar tezinin ilerleme kaydı. Her yeni oturumda bu iki dosyayı aç, içeriklerini kopyala ve AI'na şöyle söyle:
+
+> "tezatlas/skills/core/context-management.md dosyasını oku ve talimatları uygula. Tez projem: [MEMORY.md içeriği] [DURUM_OZETI.md içeriği]"
 
 ---
 
@@ -397,7 +402,7 @@ Faz 3 ve 6 için 90-120 dakikalık oturumlar idealdir. Context window dolmadan k
 Hayır. Danışmanın gördüğü şey: sana gelen dosyalar (bölüm taslakları, yapı planı). TezAtlas'ı kullandığını bilmesi gerekmiyor.
 
 **AI tezi benim yerime mi yazıyor?**
-Hayır — her iddia, her argüman, her kaynak seçimi senindir. AI yapıyı kurar, kaynakları bulur, notları düzenler ve kuralları uygular. Ama "ne savunuyorsun" sorusuna sen cevap verirsin.
+Tezin fikri, argümanı ve savunması senindir. AI bir araştırma asistanı gibi çalışır: kaynakları bulur, notları düzenler, yapıyı önerir ve yazdıklarını biçimlendirir. Danışmanın sana ne savunduğunu sorduğunda cevap verebilmek zorunda olduğunu unutma — bu sistem seni o soruya hazırlar, sorudan kaçtırmaz.
 
 **Tezim çok farklı bir disiplindeyse?**
 TezAtlas 8 disiplini destekler: Hukuk, Sosyal Bilimler, Mühendislik, Fen Bilimleri, Tıp, İşletme, Eğitim, Beşeri Bilimler. Faz 0'da disiplinini söylediğinde o disipline özgü kurallar yüklenir.
