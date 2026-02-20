@@ -18,3 +18,9 @@ Durum: Uygulandi (`skills/phases/phase-2-sources.md`, `skills/templates/tpl-kayn
 
 5. Faz 3 not dosyalari kok dizinde degil `notlar/` klasorunde tutulmali.
 Durum: Uygulandi (`skills/phases/phase-3-reading.md`, `skills/templates/tpl-notlar.md`).
+
+6. `notlar/INDEX.md` dosyasi ile notlarin durumunu tek tabloda takip et.
+Durum: Uygulandi (`notlar/INDEX.md`, `skills/phases/phase-3-reading.md`).
+
+7. `_notlar.md` icin zorunlu tamamlanma kriteri koy (2 alinti, 3 parafraz, 1 kartopu, tam elestirel degerlendirme, tam yazim plani).
+Durum: Uygulandi (`skills/templates/tpl-notlar.md`, `skills/phases/phase-3-reading.md`).

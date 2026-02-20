@@ -10,6 +10,7 @@ description_tr: "Sistematik kaynak okuma, sayfa numaralı not alma ve dipnot tak
 tags: [phase, reading, snowball-sampling, saturation, note-taking, cyclic, loop]
 outputs:
   - "notlar/ altında _notlar.md dosyaları (bölüm/kaynak gruplarına göre)"
+  - "notlar/INDEX.md (not takip tablosu)"
   - OKUMA_RAPORU.md
   - "Güncellenmiş KAYNAK_ENVANTERI.md"
 links_to:
@@ -27,7 +28,7 @@ used_by:
   - skills/phases/phase-2-sources.md
   - skills/phases/phase-4-structure.md
 language: bilingual
-version: "2.2"
+version: "2.3"
 ---
 
 # Faz 3 — Okuma ve Kartopu Keşif / Phase 3 — Reading and Snowball Discovery
@@ -55,6 +56,8 @@ Kaynak kuyruğundan bir PDF seç
 [[pdf-reading]] protokolüyle ön kontrol (metin tabanlı mı? OCR gerekli mi?)
   ↓
 Kaynak oku → sayfa numaralı notlar çıkar → [[tpl-notlar]] formatında `notlar/` altına _notlar.md yaz
+  ↓
+`notlar/INDEX.md` kaydını güncelle (durum, son güncelleme, tamamlanma kriteri)
   ↓
 [[critical-reading]]: Eleştirel değerlendirme yap
   → Kaynak güvenilirliği rubriği
@@ -98,8 +101,18 @@ Mümkün olduğunca birincil kaynak (orijinal eser) tercih et. Birincil bulunama
 ## Çıktılar
 
 - `notlar/` altında `_notlar.md` dosyaları — şablon: [[tpl-notlar]]
+- `notlar/INDEX.md` — kaynak bazlı durum panosu
 - `OKUMA_RAPORU.md` — doygunluk metrikleri, okunan PDF listesi, kartopu keşifleri — şablon: [[tpl-okuma-raporu]]
 - Güncellenmiş `KAYNAK_ENVANTERI.md`
+
+## _notlar.md Tamamlanma Kriteri (Zorunlu)
+
+Bir `_notlar.md` dosyası "✅ TAMAMLANDI" sayılmadan önce:
+- En az 2 adet sayfa numaralı doğrudan alıntı adayı olmalı
+- En az 3 adet sayfa numaralı parafraz argümanı olmalı
+- En az 1 adet kartopu keşfi kaydı olmalı (VAR/YOK durumu ile)
+- Eleştirel değerlendirme bölümündeki tüm alanlar doldurulmalı
+- Yazım planındaki 5 adım doldurulmalı
 
 ## Danışman Kontrol Noktası
 

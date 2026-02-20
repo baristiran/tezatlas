@@ -17,7 +17,7 @@ used_by:
   - skills/phases/phase-6-writing.md
   - skills/techniques/pdf-reading.md
 language: bilingual
-version: "2.3"
+version: "2.4"
 ---
 
 # Şablon: _notlar.md
@@ -25,12 +25,26 @@ version: "2.3"
 Bu dosya kök dizinde değil, `notlar/` klasörü altında oluşturulmalıdır.
 Örnek: `notlar/BIS_2020_CBDC_Foundational_Principles_Core_Features_notlar.md`
 
+Tamamlanma kriteri zorunludur. Bir dosya "✅ TAMAMLANDI" olmadan önce:
+- En az 2 doğrudan alıntı adayı (sayfa numaralı)
+- En az 3 parafraz argümanı (sayfa numaralı)
+- En az 1 kartopu keşfi kaydı
+- Eleştirel değerlendirme alanlarının tamamı
+- Yazım planı 5 adımın tamamı
+
 ```markdown
 # Kaynak Notları: [Alt Bölüm Adı]
 
 > Hazırlanma tarihi: [tarih]
 > Okunan PDF sayısı: [X]
 > Toplam not sayısı: [X]
+
+## Tamamlanma Kontrol Listesi
+- [ ] En az 2 doğrudan alıntı adayı var
+- [ ] En az 3 parafraz argümanı var
+- [ ] En az 1 kartopu keşfi kaydı var
+- [ ] Eleştirel değerlendirme alanları tam dolu
+- [ ] Yazım planındaki 5 adım dolu
 
 ## Kaynak 1: [Yazar, Kısa Başlık, Yıl]
 **PDF:** [dosya_adi.pdf]
