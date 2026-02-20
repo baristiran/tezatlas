@@ -24,3 +24,12 @@ Durum: Uygulandi (`notlar/INDEX.md`, `skills/phases/phase-3-reading.md`).
 
 7. `_notlar.md` icin zorunlu tamamlanma kriteri koy (2 alinti, 3 parafraz, 1 kartopu, tam elestirel degerlendirme, tam yazim plani).
 Durum: Uygulandi (`skills/templates/tpl-notlar.md`, `skills/phases/phase-3-reading.md`).
+
+8. Tamamlanma kriterlerini kaynak turune gore uyarlama (mevzuat/yargi icin farkli, makale/rapor icin farkli esikler).
+Durum: Oneri (uygulanmadi).
+
+9. Notlara \"okuma kaniti\" alani ekleme (okunan sayfa araligi + yaklasik okuma suresi).
+Durum: Oneri (uygulanmadi).
+
+10. Not durumlarini 3 seviyeye ayirma (`BASLANDI`, `DERIN_OKUNDU`, `TAMAMLANDI`).
+Durum: Oneri (uygulanmadi).
