@@ -11,12 +11,21 @@
 
 | Metrik | Değer |
 |--------|-------|
-| Planlanan kaynak (ilk döngü) | 30 |
+| Planlanan kaynak (zorunlu tam okuma) | 621 |
 | Okunan kaynak | 0 |
-| Bekleyen kaynak | 30 |
+| Bekleyen kaynak | 621 |
 | Kartopu ile keşfedilen yeni kaynak | 0 |
-| Toplam kaynak kuyruğu | 30 |
-| Doygunluk durumu | HAYIR |
+| Toplam kaynak kuyruğu | 621 |
+| Doygunluk durumu | Kilitli (tam okuma bitmeden Faz 4 yok) |
+
+---
+
+## Okuma Kapsam Karari
+
+- Bu proje icin karar: `/kaynaklar/` altindaki tum kaynaklar bastan sona okunacak.
+- Faz 3 cikis kosulu override: doygunluk sinyali tek basina yeterli degil.
+- Faz 4'e gecis: ancak tam okuma tamamlandiginda.
+- Toplam PDF sayfasi (hesaplanan): 42,370
 
 ---
 
@@ -103,7 +112,8 @@ Her 5 kaynaktan sonra güncellenecek.
 |-----------|-------|---------------|---------------------|-------------------|---------------|
 | 0. kontrol | 2026-02-20 | 0 | — | — | Başlangıç: Doygunluk YOK |
 
-**Doygunluk kriteri:** 5 kaynak ardı ardına okunduktan sonra 3'ten az yeni kavram ve 2'den az yeni kaynak keşfi → Doygunluk.
+**Doygunluk kriteri (izleme):** 5 kaynak ardı ardına okunduktan sonra 3'ten az yeni kavram ve 2'den az yeni kaynak keşfi → Doygunluk sinyali.
+Bu projede Faz 4 gecisi icin tek basina yeterli degildir; tam korpus okuma zorunludur.
 
 ---
 
@@ -141,5 +151,5 @@ En çok atıf potansiyeli olan 3 yayın kanalı (mevcut envanter):
 ### Oturum: 2026-02-20
 - **Okunan:** Henüz başlanmadı (Faz 3 başlangıç kurulumu tamamlandı)
 - **Süre:** ~1 saat (envanter, öncelik kuyruğu, rapor kurulum)
-- **Temel bulgular:** Kaynak havuzu yeterli ve dengeli; ilk döngü 30 kaynakla başlatılabilir.
-- **Sonraki oturum için:** İlk 5 kaynak (TCMB 2023, TCMB 2025, 1211, 6493, BIS 2020) okunacak ve `_notlar.md` üretilecek.
+- **Temel bulgular:** Kaynak havuzu yeterli ve dengeli; tam korpus okuma modu aktif.
+- **Sonraki oturum için:** Oncelik sirasindaki ilk 5 kaynak okunacak ve `_notlar.md` dosyalari doldurulacak (tam korpus devam edecek).

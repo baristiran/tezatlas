@@ -36,3 +36,6 @@ Durum: Oneri (uygulanmadi).
 
 11. Surec icinde kullanicinin kullandigi ikinci yapay zekadan kontrollu ikinci gorus alma adimi ekleme (kaynak uretimi degil; elestiri, karsi arguman ve bosluk tespiti icin).
 Durum: Oneri (uygulanmadi).
+
+12. Bu tez ozelinde Faz 3'te doygunluk yerine tam korpus okuma moduna gecis (`/kaynaklar/` altindaki tum kaynaklar bitmeden Faz 4 yok).
+Durum: Uygulandi (`OKUMA_RAPORU.md`, `notlar/INDEX.md`).

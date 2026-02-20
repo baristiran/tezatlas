@@ -5,6 +5,12 @@
 
 Bu dosya, `notlar/` altindaki `_notlar.md` dosyalarinin durum panosudur.
 
+## Proje Kapsami (Bu Teze Ozel Karar)
+
+- Hedef: `/kaynaklar/` altindaki tum kaynaklarin bastan sona okunmasi.
+- Hedef toplam kaynak: 621 (618 PDF + 3 EPUB)
+- Faz 4'e gecis: tum kaynaklar tamamlandiginda.
+
 ## Tamamlanma Kriteri
 
 Bir not dosyasi "✅ TAMAMLANDI" olmadan once su kosullari saglamalidir:
