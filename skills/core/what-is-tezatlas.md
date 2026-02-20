@@ -8,10 +8,11 @@ tags: [overview, real-student-model, phases, foundation]
 links_to:
   - skills/moc/MOC-phases.md
   - skills/core/iron-rules.md
+  - skills/core/error-recovery.md
 used_by:
   - skills/moc/MOC-core.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # TezAtlas Nedir? / What Is TezAtlas?
@@ -35,6 +36,16 @@ TezAtlas is an AI-assisted academic thesis writing framework that mirrors the au
 - Kaynak uydurmaz — sadece fiziksel olarak mevcut PDF'lerden atıf yapar
 - Kaynaksız yazmaz — kaynak yoksa yazıma geçmez, önce kaynağı bulur
 - Danışmanın yerine geçmez — danışman kontrol noktaları zorunludur
+
+## Güvenlik Katmanları / Safety Layers
+
+TezAtlas'ın 3 güvenlik katmanı vardır:
+
+| Katman | Mekanizma | Nerede |
+|--------|-----------|--------|
+| **Demir Kurallar** | 6 değiştirilemez kısıt (kaynaksız yazım yasak, git zorunlu…) | [[iron-rules]] |
+| **Danışman Kontrol Noktaları** | Her fazda onay sorusu — atlanamaz | Her phase-X dosyasında |
+| **Hata Kurtarma** | 7 hata senaryosu için recovery protokolleri | [[error-recovery]] |
 
 ## Gerçek Öğrenci Modeli / Real Student Model
 

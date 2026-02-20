@@ -17,11 +17,13 @@ outputs:
 links_to:
   - skills/core/quality-control.md
   - skills/moc/MOC-citations.md
+  - skills/templates/tpl-karsi-argumanlar.md
+  - skills/templates/tpl-savunma-sorulari.md
 used_by:
   - skills/moc/MOC-phases.md
   - skills/phases/phase-6-writing.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Faz 7 — Bitiriş ve Savunma Hazırlığı / Phase 7 — Finalization and Defense Preparation
@@ -30,9 +32,9 @@ version: "2.0"
 
 Tez metni tamamlandıktan sonra:
 
-1. **KARSI_ARGUMANLAR.md** — Tez argümanlarının zayıf noktaları + savunma stratejileri
+1. **KARSI_ARGUMANLAR.md** — Tez argümanlarının zayıf noktaları + savunma stratejileri → şablon: [[tpl-karsi-argumanlar]]
 2. **SAVUNMA_SUNUM_TASLAGI.md** — Sunum slayt taslağı (15-20 slayt)
-3. **SAVUNMA_SORULARI.md** — Olası jüri soruları + örnek yanıtlar
+3. **SAVUNMA_SORULARI.md** — Olası jüri soruları + örnek yanıtlar → şablon: [[tpl-savunma-sorulari]]
 4. **YONETICI_OZETI.md** — 1 sayfalık yönetici özeti (150-300 kelime)
 
 ## Tez Geneli Tutarlılık Kontrolü

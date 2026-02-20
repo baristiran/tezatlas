@@ -3,8 +3,8 @@ title: "MOC — Core Cluster"
 title_tr: "MOC — Temel Küme"
 node_type: moc
 cluster: core
-description: "Navigation hub for the 7 always-active foundation nodes. These nodes apply at every phase and every session — read them before starting any work."
-description_tr: "7 her zaman aktif temel node için navigasyon merkezi. Bu node'lar her fazda ve her oturumda geçerlidir — herhangi bir çalışmaya başlamadan önce okuyun."
+description: "Navigation hub for the 8 always-active foundation nodes. These nodes apply at every phase and every session — read them before starting any work."
+description_tr: "8 her zaman aktif temel node için navigasyon merkezi. Bu node'lar her fazda ve her oturumda geçerlidir — herhangi bir çalışmaya başlamadan önce okuyun."
 tags: [moc, core, foundation, always-active, navigation]
 cluster_nodes:
   - skills/core/iron-rules.md
@@ -18,7 +18,7 @@ cluster_nodes:
 used_by:
   - skills/INDEX.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # MOC — Temel Küme / Core Cluster
@@ -29,7 +29,7 @@ Her TezAtlas oturumu iki değiştirilemez sınırla çevrilir: [[iron-rules]] ne
 
 | Node | Açıklama | Wikilink |
 |------|----------|----------|
-| Demir Kurallar | 5 değiştirilemez kısıt — her oturumda geçerli | [[iron-rules]] |
+| Demir Kurallar | 6 değiştirilemez kısıt — her oturumda geçerli | [[iron-rules]] |
 | TezAtlas Nedir? | Sistem özeti, gerçek öğrenci modeli | [[what-is-tezatlas]] |
 | Çalışma Prensipleri | 8 operasyonel prensip (A-H) | [[working-principles]] |
 | Context Yönetimi | 6-dosya oturum sistemi, uzun aradan recovery | [[context-management]] |
