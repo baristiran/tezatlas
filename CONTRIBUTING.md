@@ -1,6 +1,6 @@
 # Katkıda Bulunma Rehberi
 
-TezPilot'a katkıda bulunmak istediğiniz için teşekkürler! Bu rehber, farklı katkı türleri için adım adım talimatlar içerir.
+TezAtlas'a katkıda bulunmak istediğiniz için teşekkürler! Bu rehber, farklı katkı türleri için adım adım talimatlar içerir.
 
 ## Genel Süreç
 
@@ -162,4 +162,4 @@ Yeni özellik veya iyileştirme önerilerinizi GitHub Issues üzerinden paylaş�
 
 ---
 
-*Her katkı TezPilot'u daha iyi yapar. Akademik dürüstlük için birlikte çalışıyoruz.*
+*Her katkı TezAtlas'ı daha iyi yapar. Akademik dürüstlük için birlikte çalışıyoruz.*

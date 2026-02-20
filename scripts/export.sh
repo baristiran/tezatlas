@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ============================================================================
-# TezPilot - Pandoc Disari Aktarma Yardimcisi
+# TezAtlas - Pandoc Disari Aktarma Yardimcisi
 # ============================================================================
 
 # Renkler
@@ -230,7 +230,7 @@ disari_aktar() {
 
     # Gecici dosya
     local gecici_dosya
-    gecici_dosya=$(mktemp /tmp/tezpilot_export_XXXXXX.md)
+    gecici_dosya=$(mktemp /tmp/tezatlas_export_XXXXXX.md)
     trap "rm -f '$gecici_dosya'" EXIT
 
     # Girdiyi hazirla
@@ -311,7 +311,7 @@ disari_aktar() {
 # ============================================================================
 
 yardim() {
-    echo -e "${BOLD}TezPilot - Pandoc Disari Aktarma Yardimcisi${NC}"
+    echo -e "${BOLD}TezAtlas - Pandoc Disari Aktarma Yardimcisi${NC}"
     echo ""
     echo -e "${BOLD}Kullanim:${NC}"
     echo "  ./export.sh [secenekler]"

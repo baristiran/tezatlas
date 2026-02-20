@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# TezPilot — Anna's Archive Helper Script
+# TezAtlas — Anna's Archive Helper Script
 # Akademik kaynak arama ve indirme yardımcısı
 # =============================================================================
 #
@@ -30,7 +30,7 @@ NC='\033[0m' # No Color
 
 # Yardım
 show_help() {
-    echo -e "${BLUE}TezPilot — Anna's Archive Helper${NC}"
+    echo -e "${BLUE}TezAtlas — Anna's Archive Helper${NC}"
     echo ""
     echo "Kullanım:"
     echo "  $0 search \"arama terimi\"      Kaynak ara"

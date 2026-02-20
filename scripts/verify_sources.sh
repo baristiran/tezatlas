@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ============================================================================
-# TezPilot - Kaynak Dogrulama Scripti
+# TezAtlas - Kaynak Dogrulama Scripti
 # ============================================================================
 
 # Renkler
@@ -309,7 +309,7 @@ istatistikler() {
 # ============================================================================
 
 yardim() {
-    echo -e "${BOLD}TezPilot - Kaynak Dogrulama Araci${NC}"
+    echo -e "${BOLD}TezAtlas - Kaynak Dogrulama Araci${NC}"
     echo ""
     echo -e "${BOLD}Kullanim:${NC}"
     echo "  ./verify_sources.sh [komut] [envanter_dosyasi]"
