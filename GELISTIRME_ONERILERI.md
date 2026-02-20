@@ -33,3 +33,6 @@ Durum: Oneri (uygulanmadi).
 
 10. Not durumlarini 3 seviyeye ayirma (`BASLANDI`, `DERIN_OKUNDU`, `TAMAMLANDI`).
 Durum: Oneri (uygulanmadi).
+
+11. Surec icinde kullanicinin kullandigi ikinci yapay zekadan kontrollu ikinci gorus alma adimi ekleme (kaynak uretimi degil; elestiri, karsi arguman ve bosluk tespiti icin).
+Durum: Oneri (uygulanmadi).
