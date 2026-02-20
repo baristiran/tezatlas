@@ -24,7 +24,7 @@ used_by:
   - skills/phases/phase-1-topic.md
   - skills/phases/phase-3-reading.md
 language: bilingual
-version: "2.1"
+version: "2.2"
 ---
 
 # Faz 2 — Çekirdek Kaynak Avı / Phase 2 — Core Source Hunt
@@ -67,12 +67,30 @@ Anahtar kavramlara ve araştırma sorularına dayanarak AI bir kaynak listesi ha
 3. Kurumsal web siteleri (BIS, IMF, ECB, resmi kurumlar)
 4. Üniversite kütüphanesi (kullanıcı aracılığıyla)
 
-**Adım 3 — İndirme ve Dosya Adlandırma:**
+**Adım 3 — İndirme, Dosya Adlandırma ve Yeniden Adlandırma Yetkisi:**
 ```
 Bireysel eser:   Yazar_Yıl_Kısa_Başlık.pdf
 Kurumsal rapor:  Kurum_Yıl_Kısa_Başlık.pdf
 Çok yazarlı:     Yazar1_Yazar2_Yıl_Kısa_Başlık.pdf
 ```
+
+**AI yetkisi (Faz 2):**
+- AI, `KAYNAK_ENVANTERI.md` üretimi sırasında `/kaynaklar/` klasöründeki dosya adlarını bu kurala uydurmak için yeniden adlandırabilir.
+- Amaç: envanterin tutarlı, aranabilir ve otomatik işlenebilir olması.
+
+**Yeniden adlandırma kuralları:**
+1. Boşluklar `_` yapılır.
+2. Türkçe karakterler ASCII karşılıklarına çevrilir.
+3. Dosya adı `Yazar/Kurum_Yıl_Kısa_Başlık` düzenine getirilir.
+4. Uzantı korunur (`.pdf`, `.epub`).
+5. Hedef ad çakışıyorsa `_v2`, `_v3` gibi son ek kullanılır.
+6. Aşağıdaki dosyalar yeniden adlandırılmaz:
+   - `.gitkeep`
+   - `README.md`
+   - `cookies.txt`
+
+**Kayıt zorunluluğu:**
+- Her yeniden adlandırma `KAYNAK_ENVANTERI.md` içinde "Dosya Adı Normalizasyon Kayıtları" bölümüne `eski_ad -> yeni_ad` formatında yazılır.
 
 İndirme zinciri:
 ```

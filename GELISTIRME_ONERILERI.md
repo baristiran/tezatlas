@@ -12,3 +12,6 @@ Durum: Uygulandi (`skills/phases/phase-0-identity.md`, `.claude/commands/tez-bas
 
 3. Faz 1 sonunda uretilen `konu_kesfi.md` dosyasini konusma/konsolda acikca goster.
 Durum: Uygulandi (`skills/phases/phase-1-topic.md`, `.claude/commands/tez-baslat.md`, `.claude/commands/thesis-start.md`, `README.md`).
+
+4. Faz 2'de kaynak envanteri olustururken AI'a dosya adlarini kendi adlandirma kuralina gore guncelleme yetkisi ver.
+Durum: Uygulandi (`skills/phases/phase-2-sources.md`, `skills/templates/tpl-kaynak-envanteri.md`).

@@ -14,7 +14,7 @@ used_by:
   - skills/phases/phase-2-sources.md
   - skills/phases/phase-3-reading.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Şablon: KAYNAK_ENVANTERI.md
@@ -43,4 +43,8 @@ version: "2.0"
 ## Bekleyen İndirmeler
 - [ ] `Yazar_Yıl_Başlık.pdf` — [link]
 - [ ] `Yazar_Yıl_Başlık.pdf` — [link]
+
+## Dosya Adı Normalizasyon Kayıtları
+- `Eski_Dosya_Adi.pdf` → `Yeni_Dosya_Adi.pdf`
+- `Eski_Dosya_Adi_2.pdf` → `Yeni_Dosya_Adi_2.pdf`
 ```
