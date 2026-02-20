@@ -1,0 +1,95 @@
+---
+title: "Phase 2 — Core Source Hunt"
+title_tr: "Faz 2 — Çekirdek Kaynak Avı"
+node_type: phase
+phase_number: 2
+phase_gate_in: "phase-1-topic.md"
+phase_gate_out: "phase-3-reading.md"
+description: "Find and download the first 15-30 core sources for the thesis topic. Three starting situations: empty /kaynaklar/, partially filled, or already stocked. Minimum counts: YL 30, DR 80 before entering Phase 3."
+description_tr: "Tez konusu için ilk 15-30 çekirdek kaynağı bul ve indir. Üç başlangıç durumu: boş /kaynaklar/, kısmen dolu, zaten dolu. Faz 3'e girmeden önce minimum: YL 30, DR 80."
+tags: [phase, source-hunting, download, inventory, minimum-count]
+outputs:
+  - KAYNAK_ENVANTERI.md
+  - "/kaynaklar/ klasörü (dolu)"
+links_to:
+  - skills/core/iron-rules.md
+  - skills/core/source-policy.md
+  - skills/techniques/source-hunting.md
+  - skills/techniques/snowball-sampling.md
+  - skills/tooling/annas-archive.md
+  - skills/templates/tpl-kaynak-envanteri.md
+used_by:
+  - skills/moc/MOC-phases.md
+  - skills/phases/phase-1-topic.md
+  - skills/phases/phase-3-reading.md
+language: bilingual
+version: "2.0"
+---
+
+# Faz 2 — Çekirdek Kaynak Avı / Phase 2 — Core Source Hunt
+
+## Amaç
+
+Tez konusu için ilk 15-30 çekirdek kaynağı bulmak ve `/kaynaklar/` klasörüne indirmek.
+
+## Başlangıç Durumu Kontrolü
+
+**Durum A — Kaynaklar zaten mevcut** (öğrenci önceden toplamış):
+→ Klasör taranır → `KAYNAK_ENVANTERI.md` üretilir → Faz 3'e geçilir
+
+**Durum B — Sıfırdan başlıyor** (kaynaklar klasörü boş):
+→ Klasör oluşturulur → kaynak avı başlar
+
+**Durum C — Kısmen dolu:**
+→ Mevcut kaynaklar taranır → eksikler tespit edilir → ek kaynak avı
+
+## Kaynak Bulma Stratejisi
+
+**Adım 1 — Çekirdek liste:**
+Anahtar kavramlara ve araştırma sorularına dayanarak AI bir kaynak listesi hazırlar:
+- Her araştırma sorusu için en az 3-5 temel kaynak
+- Alanın klasik eserleri
+- Son 5 yılın önemli çalışmaları
+- Disipline özgü temel referanslar
+
+**Adım 2 — Kaynak arama kanalları** (sırayla denenir, detay [[source-hunting]]'de):
+1. Anna's Archive → [[annas-archive]]
+2. Açık erişim veritabanları (SSRN, arXiv, CORE, OpenAlex, Google Scholar)
+3. Kurumsal web siteleri (BIS, IMF, ECB, resmi kurumlar)
+4. Üniversite kütüphanesi (kullanıcı aracılığıyla)
+
+**Adım 3 — İndirme ve Dosya Adlandırma:**
+```
+Bireysel eser:   Yazar_Yıl_Kısa_Başlık.pdf
+Kurumsal rapor:  Kurum_Yıl_Kısa_Başlık.pdf
+Çok yazarlı:     Yazar1_Yazar2_Yıl_Kısa_Başlık.pdf
+```
+
+İndirme zinciri:
+```
+AI kaynak buldu →
+  ├─ Kendisi indirebiliyorsa → indir → /kaynaklar/'a kaydet
+  └─ İndiremiyorsa → kullanıcıya bildir:
+       "Şu kaynak gerekli: [künye]. Link: [url].
+        Önerilen dosya adı: Yazar_Yıl_Kısa_Başlık.pdf"
+```
+
+## Kaynak Yeterlilik Kontrolü
+
+Faz 3'e geçmeden önce kontrol et:
+
+| Tez Türü | Minimum | Hedef |
+|----------|:-------:|:-----:|
+| YL tezi | 30 | 50-80 |
+| DR tezi | 80 | 150-250 |
+
+Ek kontroller:
+- En az 3 farklı kaynak türü (kitap + makale + rapor)
+- Tez dili dışında en az 1 dilde kaynak
+- Alanın klasik eserleri mevcut mu?
+
+Yeterli değilse → kaynak avına devam.
+
+## Çıktı
+
+`KAYNAK_ENVANTERI.md` — şablon: [[tpl-kaynak-envanteri]]

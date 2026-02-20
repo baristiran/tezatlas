@@ -1,0 +1,128 @@
+# TezPilot — Üniversite Format Şablonu
+# Bu dosyayı kendi üniversiteniz için kopyalayıp düzenleyin.
+# Dosya adı: [universite-kisaltma].yaml (örn: asbu.yaml, itu.yaml, odtu.yaml)
+
+universite:
+  tam_ad: "Örnek Üniversitesi"
+  kisa_ad: "ÖRN"
+  enstitu: "Lisansüstü Eğitim Enstitüsü"
+
+# Sayfa Düzeni
+sayfa:
+  kagit: "A4"
+  kenar_bosluklari:
+    sol: "3.5cm"       # Cilt payı için geniş
+    sag: "2.5cm"
+    ust: "3.0cm"
+    alt: "3.0cm"
+  satir_araligi: "1.5"  # veya "2.0" (çift)
+  paragraf_girintisi: "1.25cm"  # veya "1.0cm"
+  blok_alinti_girintisi: "1.5cm"  # 40+ kelime alıntılar
+
+# Yazı Tipi
+yazi_tipi:
+  ana_metin: "Times New Roman"
+  boyut: 12
+  dipnot_boyut: 10
+  tablo_boyut: 10  # veya 11
+
+# Başlık Hiyerarşisi
+basliklar:
+  bolum:  # BÖLÜM 1: ...
+    font_boyut: 14
+    kalin: true
+    buyuk_harf: true
+    hizalama: "orta"  # veya "sol"
+    oncesi: "yeni_sayfa"
+  alt_baslik_1:  # 1.1. Alt Başlık
+    font_boyut: 12
+    kalin: true
+    buyuk_harf: false
+    hizalama: "sol"
+  alt_baslik_2:  # 1.1.1. Alt Alt Başlık
+    font_boyut: 12
+    kalin: true
+    italik: false
+    hizalama: "sol"
+  alt_baslik_3:  # 1.1.1.1. (gerekiyorsa)
+    font_boyut: 12
+    kalin: false
+    italik: true
+    hizalama: "sol"
+
+# Sayfa Numaralandırma
+sayfa_numaralama:
+  on_kisim: "roma"      # i, ii, iii... (önsöz, içindekiler, tablolar listesi)
+  ana_metin: "arap"      # 1, 2, 3... (giriş'ten itibaren)
+  konum: "alt_orta"      # veya "alt_sag"
+  ilk_sayfa_numarasi: false  # Bölüm başlangıç sayfalarında numara gösterilmez
+
+# Ön Kısım Sıralaması
+on_kisim:
+  - "kapak_sayfasi"
+  - "onay_sayfasi"
+  - "etik_beyan"
+  - "ozet"              # Türkçe özet
+  - "abstract"          # İngilizce özet
+  - "onsoz"             # veya "tesekkur"
+  - "icindekiler"
+  - "kisaltmalar"
+  - "tablolar_listesi"
+  - "sekiller_listesi"
+
+# Özet Kuralları
+ozet:
+  turkce:
+    baslik: "ÖZET"
+    min_kelime: 150
+    max_kelime: 300
+    anahtar_kelime_sayisi: "3-5"
+    anahtar_kelime_baslik: "Anahtar Kelimeler:"
+  ingilizce:
+    baslik: "ABSTRACT"
+    min_kelime: 150
+    max_kelime: 300
+    anahtar_kelime_sayisi: "3-5"
+    anahtar_kelime_baslik: "Keywords:"
+
+# Dipnot / Atıf
+dipnot:
+  varsayilan_sistem: "chicago-notes"  # veya "apa7", "harvard", "ieee"
+  dipnot_ayirici: true    # Dipnot ile metin arasında çizgi
+  dipnot_font_boyut: 10
+  dipnot_satir_araligi: "1.0"
+
+# Kaynakça
+kaynakca:
+  baslik: "KAYNAKÇA"      # veya "KAYNAKLAR" veya "REFERENCES"
+  sralama: "alfabetik"     # veya "numara" (IEEE için)
+  girinti: "asili"         # Asılı girinti (1.25cm)
+  satir_araligi: "1.0"    # Kaynaklar arası: tek aralık
+  kaynak_arasi_bosluk: "6pt"  # Kaynaklar arasında ek boşluk
+
+# Tablo ve Şekiller
+tablo_sekil:
+  tablo_baslik_konum: "ust"     # Tablo başlığı tablonun üstünde
+  sekil_baslik_konum: "alt"     # Şekil başlığı şeklin altında
+  numaralama: "bolum_bazli"     # Tablo 1.1, Tablo 1.2... veya "sirali" (Tablo 1, 2, 3...)
+  kaynak_gosterimi: true        # Tablo/şekil altında kaynak gösterimi
+
+# Ekler
+ekler:
+  baslik: "EKLER"
+  numaralama: "EK-1, EK-2, EK-3"  # veya "Ek A, Ek B, Ek C"
+
+# İntihal
+intihal:
+  max_benzerlik: 20          # Yüzde olarak maksimum benzerlik oranı
+  arac: "Turnitin"           # veya "iThenticate"
+  rapor_teslim: true         # İntihal raporu teslim zorunluluğu
+
+# Özel Notlar
+notlar: |
+  Bu şablon örnek amaçlıdır. Kendi üniversitenizin tez yazım kılavuzunu
+  kontrol ederek değerleri güncelleyin. Enstitü web sitesinde genellikle
+  "Tez Yazım Kılavuzu" başlığı altında bulunabilir.
+
+  Katkıda bulunmak için: templates/universities/ klasörüne
+  [universite-kisaltma].yaml formatında dosya ekleyip PR gönderin.

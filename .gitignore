@@ -1,0 +1,33 @@
+# OS dosyaları
+.DS_Store
+Thumbs.db
+
+# Editor dosyaları
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Proje çalışma dosyaları (her kullanıcıya özel)
+kaynaklar/
+*.pdf
+*.epub
+
+# Kişisel proje dosyaları
+proje_kimlik.md
+MEMORY.md
+DERSLER.md
+TERMINOLOJI.md
+DURUM_OZETI.md
+KAYNAK_ENVANTERI.md
+KAYNAK_HARITASI.md
+tezprotokol_proje.md
+*_notlar.md
+
+# Çıktı dosyaları
+*.docx
+*.doc
+
+# Node modülleri (eğer gelecekte eklenirse)
+node_modules/

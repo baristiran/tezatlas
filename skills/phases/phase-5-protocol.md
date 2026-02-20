@@ -1,0 +1,82 @@
+---
+title: "Phase 5 — Protocol Generation"
+title_tr: "Faz 5 — Protokol Üretimi"
+node_type: phase
+phase_number: 5
+phase_gate_in: "phase-4-structure.md"
+phase_gate_out: "phase-6-writing.md"
+description: "Combine all Phase 0-4 information to generate project-specific files: tezprotokol.md (project constitution), CLAUDE.md (auto-loaded summary), and four memory files. Initialize git repository."
+description_tr: "Faz 0-4'teki tüm bilgileri birleştirerek projeye özgü dosyaları üret: tezprotokol.md (proje anayasası), CLAUDE.md (otomatik yüklenen özet) ve dört bellek dosyası. Git deposunu başlat."
+tags: [phase, protocol-generation, project-constitution, memory-files, git-init]
+outputs:
+  - tezprotokol.md
+  - CLAUDE.md
+  - MEMORY.md
+  - DERSLER.md
+  - TERMINOLOJI.md
+  - DURUM_OZETI.md
+links_to:
+  - skills/core/context-management.md
+  - skills/tooling/git-workflow.md
+  - skills/templates/tpl-durum-ozeti.md
+  - skills/templates/tpl-dersler.md
+  - skills/templates/tpl-terminoloji.md
+  - skills/moc/MOC-citations.md
+used_by:
+  - skills/moc/MOC-phases.md
+  - skills/phases/phase-4-structure.md
+  - skills/phases/phase-6-writing.md
+language: bilingual
+version: "2.0"
+---
+
+# Faz 5 — Protokol Üretimi / Phase 5 — Protocol Generation
+
+## Amaç
+
+Faz 0-4'teki tüm bilgileri birleştirerek projeye özgü dosyalar üretmek. Bu dosyalar [[context-management]] sisteminin temelini oluşturur.
+
+## Üretilen Dosyalar
+
+**1. tezprotokol.md** — Projeye özel yazım protokolü:
+- Proje kimliği (Faz 0'dan)
+- Tez başlığı, anahtar kavramlar, araştırma soruları (Faz 1'den)
+- Kaynak politikası (evrensel kurallar + projeye özel)
+- Atıf sistemi (seçilen sisteme göre detaylı formatlar — [[MOC-citations]]'dan)
+- Tez yapısı ve dosya haritası (Faz 4'ten)
+- Teorik çerçeve özeti (Faz 3'teki okumalardan)
+- Terminoloji sözlüğü başlangıcı
+- Metodoloji detayı
+- Yazım standartları (üniversite formatı + akademik dil)
+- Uzunluk hedefleri (bölüm bazlı)
+- Oturum planı
+- Kalite kontrol listeleri
+
+**2. CLAUDE.md** — Her oturumda otomatik yüklenen kısa özet:
+- Projenin ne olduğu (1 paragraf)
+- Demir kurallar (5 madde)
+- Kritik uyarılar
+- Okunması gereken dosya listesi
+
+**3. MEMORY.md** — İlerleme takibi (başlangıçta):
+```
+Tamamlanan bölümler: (boş)
+Son dipnot no: 0
+Toplam kelime: 0
+Sonraki adım: Faz 6 başlangıcı
+```
+
+**4. DERSLER.md** — Öz-iyileştirme (başlangıçta boş, zamanla dolar) — şablon: [[tpl-dersler]]
+
+**5. TERMINOLOJI.md** — Tutarlılık (Faz 1'deki anahtar kavramlarla başlar) — şablon: [[tpl-terminoloji]]
+
+**6. DURUM_OZETI.md** — Her oturum sonunda güncellenen detaylı durum raporu — şablon: [[tpl-durum-ozeti]]
+
+## Git Başlatma
+
+Detay [[git-workflow]]'da:
+```bash
+git init
+git add .
+git commit -m "TezAtlas: Proje kurulumu tamamlandı — Faz 0-5"
+```

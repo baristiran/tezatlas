@@ -1,0 +1,113 @@
+# TezPilot — Bogazici Universitesi
+# Institute for Graduate Studies in Social Sciences /
+# Institute for Graduate Studies in Science and Engineering Tez Yazim Kilavuzu
+
+universite:
+  tam_ad: "Bogazici Universitesi"
+  kisa_ad: "BU"
+  enstitu: "Institute for Graduate Studies"
+
+sayfa:
+  kagit: "A4"
+  kenar_bosluklari:
+    sol: "3.5cm"
+    sag: "2.5cm"
+    ust: "2.5cm"
+    alt: "2.5cm"
+  satir_araligi: "2.0"
+  paragraf_girintisi: "1.25cm"
+  blok_alinti_girintisi: "2.0cm"
+  blok_alinti_satir_araligi: "1.0"
+
+yazi_tipi:
+  ana_metin: "Times New Roman"
+  boyut: 12
+  dipnot_boyut: 10
+  tablo_boyut: 10
+
+basliklar:
+  bolum:
+    font_boyut: 14
+    kalin: true
+    buyuk_harf: true
+    hizalama: "orta"
+    oncesi: "yeni_sayfa"
+  alt_baslik_1:
+    font_boyut: 12
+    kalin: true
+    buyuk_harf: false
+    hizalama: "sol"
+  alt_baslik_2:
+    font_boyut: 12
+    kalin: true
+    italik: false
+    hizalama: "sol"
+  alt_baslik_3:
+    font_boyut: 12
+    kalin: false
+    italik: true
+    hizalama: "sol"
+
+sayfa_numaralama:
+  on_kisim: "roma"
+  ana_metin: "arap"
+  konum: "alt_orta"
+  ilk_sayfa_numarasi: false
+
+on_kisim:
+  - "ic_kapak"
+  - "onay_sayfasi"
+  - "etik_beyan"
+  - "abstract"
+  - "ozet"
+  - "onsoz"
+  - "icindekiler"
+  - "kisaltmalar"
+  - "tablolar_listesi"
+  - "sekiller_listesi"
+
+ozet:
+  turkce:
+    baslik: "OZET"
+    min_kelime: 150
+    max_kelime: 300
+    anahtar_kelime_sayisi: "3-5"
+  ingilizce:
+    baslik: "ABSTRACT"
+    min_kelime: 150
+    max_kelime: 300
+    anahtar_kelime_sayisi: "3-5"
+
+dipnot:
+  varsayilan_sistem: "apa7"
+  dipnot_font_boyut: 10
+  dipnot_satir_araligi: "1.0"
+
+kaynakca:
+  baslik: "REFERENCES"
+  siralama: "alfabetik"
+  girinti: "asili"
+  satir_araligi: "1.0"
+  kaynak_arasi_bosluk: "6pt"
+
+tablo_sekil:
+  tablo_baslik_konum: "ust"
+  sekil_baslik_konum: "alt"
+  numaralama: "bolum_bazli"
+
+ekler:
+  baslik: "APPENDICES"
+  numaralama: "APPENDIX A, APPENDIX B, APPENDIX C"
+
+intihal:
+  max_benzerlik: 15
+  arac: "Turnitin"
+
+notlar: |
+  Bogazici Universitesi tezleri genellikle Ingilizce yazilir.
+  Ingilizce tezlerde dahi hem Turkce (OZET) hem Ingilizce (ABSTRACT) ozet zorunludur.
+  Intihal siniri %15 ile diger universitelere gore daha katidir.
+  Cift satir araligi (2.0) ana metin icin standarttir.
+  Sol kenar boslugu 3.5cm cilt payi icin genis tutulmustur.
+  On kisimda abstract, ozetten once gelir (tez dili Ingilizce oldugu icin).
+  Sosyal Bilimler Enstitusu ve Fen Bilimleri Enstitusu ayri kilavuzlara sahip olabilir.

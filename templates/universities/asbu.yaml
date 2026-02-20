@@ -1,0 +1,109 @@
+# TezPilot — Ankara Sosyal Bilimler Üniversitesi (ASBÜ)
+# Sosyal Bilimler Enstitüsü Tez Yazım Kılavuzu
+
+universite:
+  tam_ad: "Ankara Sosyal Bilimler Üniversitesi"
+  kisa_ad: "ASBÜ"
+  enstitu: "Sosyal Bilimler Enstitüsü"
+
+sayfa:
+  kagit: "A4"
+  kenar_bosluklari:
+    sol: "3.5cm"
+    sag: "2.5cm"
+    ust: "3.0cm"
+    alt: "3.0cm"
+  satir_araligi: "1.5"
+  paragraf_girintisi: "1.0cm"
+  blok_alinti_girintisi: "2.0cm"
+  blok_alinti_satir_araligi: "1.0"
+
+yazi_tipi:
+  ana_metin: "Times New Roman"
+  boyut: 12
+  dipnot_boyut: 10
+  tablo_boyut: 10
+
+basliklar:
+  bolum:
+    font_boyut: 14
+    kalin: true
+    buyuk_harf: true
+    hizalama: "orta"
+    oncesi: "yeni_sayfa"
+  alt_baslik_1:
+    font_boyut: 12
+    kalin: true
+    buyuk_harf: false
+    hizalama: "sol"
+  alt_baslik_2:
+    font_boyut: 12
+    kalin: true
+    italik: false
+    hizalama: "sol"
+  alt_baslik_3:
+    font_boyut: 12
+    kalin: false
+    italik: true
+    hizalama: "sol"
+
+sayfa_numaralama:
+  on_kisim: "roma"
+  ana_metin: "arap"
+  konum: "alt_orta"
+  ilk_sayfa_numarasi: false
+
+on_kisim:
+  - "ic_kapak"
+  - "onay_sayfasi"
+  - "etik_beyan"
+  - "ozet"
+  - "abstract"
+  - "onsoz"
+  - "icindekiler"
+  - "kisaltmalar"
+  - "tablolar_listesi"
+  - "sekiller_listesi"
+
+ozet:
+  turkce:
+    baslik: "ÖZET"
+    min_kelime: 150
+    max_kelime: 300
+    anahtar_kelime_sayisi: "3-5"
+  ingilizce:
+    baslik: "ABSTRACT"
+    min_kelime: 150
+    max_kelime: 300
+    anahtar_kelime_sayisi: "3-5"
+
+dipnot:
+  varsayilan_sistem: "chicago-notes"
+  dipnot_font_boyut: 10
+  dipnot_satir_araligi: "1.0"
+
+kaynakca:
+  baslik: "KAYNAKÇA"
+  siralama: "alfabetik"
+  girinti: "asili"
+  satir_araligi: "1.0"
+  kaynak_arasi_bosluk: "6pt"
+
+tablo_sekil:
+  tablo_baslik_konum: "ust"
+  sekil_baslik_konum: "alt"
+  numaralama: "bolum_bazli"
+
+ekler:
+  baslik: "EKLER"
+  numaralama: "EK-1, EK-2, EK-3"
+
+intihal:
+  max_benzerlik: 20
+  arac: "Turnitin"
+
+notlar: |
+  ASBÜ SBE Tez Yazım Kılavuzu (2024 versiyonu) temel alınmıştır.
+  Blok alıntılar (40+ kelime): 2cm girinti, tek satır aralığı, tırnak işareti YOK.
+  Giriş ve Sonuç ayrı bölüm numarası ALMAZ.
+  Başlık hiyerarşisi: En fazla 4 kademe.
