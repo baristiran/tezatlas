@@ -14,6 +14,10 @@ kaynaklar/
 *.pdf
 *.epub
 
+# API anahtarları ve hassas yapılandırma (ASLA git'e gitmemeli)
+.tezatlas/config
+~/.tezatlas_config
+
 # Kişisel proje dosyaları
 proje_kimlik.md
 MEMORY.md

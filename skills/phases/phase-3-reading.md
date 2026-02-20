@@ -20,6 +20,7 @@ links_to:
   - skills/core/iron-rules.md
   - skills/core/source-policy.md
   - skills/templates/tpl-notlar.md
+  - skills/templates/tpl-okuma-raporu.md
   - skills/tooling/annas-archive.md
 used_by:
   - skills/moc/MOC-phases.md
@@ -97,7 +98,7 @@ Mümkün olduğunca birincil kaynak (orijinal eser) tercih et. Birincil bulunama
 ## Çıktılar
 
 - `_notlar.md` dosyaları — şablon: [[tpl-notlar]]
-- `OKUMA_RAPORU.md` — doygunluk metrikleri
+- `OKUMA_RAPORU.md` — doygunluk metrikleri, okunan PDF listesi, kartopu keşifleri — şablon: [[tpl-okuma-raporu]]
 - Güncellenmiş `KAYNAK_ENVANTERI.md`
 
 ## Danışman Kontrol Noktası

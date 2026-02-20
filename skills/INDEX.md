@@ -36,7 +36,7 @@ TezAtlas, akademik tez yazım sürecini 8 fazda yöneten, skill graph mimarisine
 | Mevcut projeye devam | [[context-management]] → ilgili faz node'u |
 | Hangi atıf sistemi? | [[MOC-citations]] |
 | Disipline özgü format? | [[MOC-disciplines]] |
-| PDF indirilemedi | [[annas-archive]] |
+| PDF indirilemedi | [[annas-archive]] → [[database-access]] |
 | Oturum sonu ritüeli | [[session-structure]] |
 | Kalite kontrolü | [[quality-control]] |
 | Kartopu örnekleme | [[snowball-sampling]] |
