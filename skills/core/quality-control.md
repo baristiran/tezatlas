@@ -10,12 +10,13 @@ links_to:
   - skills/core/context-management.md
   - skills/phases/phase-6-writing.md
   - skills/phases/phase-7-finalization.md
+  - skills/techniques/argument-evaluation.md
 used_by:
   - skills/moc/MOC-core.md
   - skills/phases/phase-6-writing.md
   - skills/phases/phase-7-finalization.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Kalite Kontrol / Quality Control
@@ -35,6 +36,12 @@ Her alt bölüm yazıldıktan sonra çalıştır. Geçemeyen madde varsa tamamla
 - [ ] Mevcut içerik kaybolmamış mı?
 - [ ] Paragraf yapısı doğru mu? (konu → argüman → kaynak → geçiş)
 - [ ] Önceki bölümle geçiş doğal mı?
+
+**Argüman mantıksal kalitesi** (detay: [[argument-evaluation]]):
+- [ ] Her argümanın zinciri tam mı? (varsayım → kanıt → sonuç)
+- [ ] Kullandığım kanıt iddiamı gerçekten destekliyor mu, yoksa sadece ilgili mi?
+- [ ] Kaynaklar arası çelişki var mı ve açıklandı mı?
+- [ ] Bu bölümdeki en güçlü karşı argümanı ele aldım mı?
 
 ## Tez Geneli Tutarlılık Kontrolü (Faz 7)
 

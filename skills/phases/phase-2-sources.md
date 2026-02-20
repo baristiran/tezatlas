@@ -17,6 +17,7 @@ links_to:
   - skills/techniques/source-hunting.md
   - skills/techniques/snowball-sampling.md
   - skills/tooling/annas-archive.md
+  - skills/tooling/database-access.md
   - skills/templates/tpl-kaynak-envanteri.md
 used_by:
   - skills/moc/MOC-phases.md
@@ -34,6 +35,7 @@ Bu fazı uygulamadan ÖNCE şu dosyaları oku:
 
 - `skills/techniques/snowball-sampling.md` — kartopu örnekleme algoritması
 - `skills/tooling/annas-archive.md` — PDF indirme aracı ve protokolü
+- `skills/tooling/database-access.md` — kurumsal veritabanları ve açık erişim fallback zinciri
 
 ## Amaç
 

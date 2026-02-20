@@ -9,6 +9,7 @@ links_to:
   - skills/core/iron-rules.md
   - skills/techniques/source-hunting.md
   - skills/techniques/snowball-sampling.md
+  - skills/tooling/database-access.md
 used_by:
   - skills/core/iron-rules.md
   - skills/core/source-policy.md
@@ -52,14 +53,16 @@ version: "2.0"
 
 ## Alternatif Kanallar (Anna's Archive başarısız olursa)
 
-Sırayla dene:
+Tam fallback zinciri ve veritabanı rehberi için: [[database-access]]
+
+Kısa özet (sırayla dene):
 1. SSRN — Sosyal bilimler ve hukuk çalışma kağıtları
 2. arXiv — Fizik, matematik, CS, ekonometri
 3. CORE (core.ac.uk) — Genel açık erişim
-4. OpenAlex — Akademik metadata + erişim linkleri
-5. Google Scholar — "PDF" filtreliyle
-6. Kurumsal web sitesi (BIS, IMF, ECB vb. için doğrudan)
-7. Üniversite kütüphanesi → kullanıcıya sor
+4. ResearchGate / Academia.edu — Yazarın yüklediği versiyon
+5. Unpaywall — Legal açık erişim versiyonu (DOI ile)
+6. Kurumsal veritabanı (JSTOR, Scopus, LexisNexis) — VPN gerekebilir
+7. Kullanıcıya sor: üniversite kütüphanesi VPN ile
 
 ## Kaynak Bulunamadığında
 

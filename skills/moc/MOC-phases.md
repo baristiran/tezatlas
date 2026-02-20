@@ -3,8 +3,8 @@ title: "MOC — Phases Cluster"
 title_tr: "MOC — Fazlar Kümesi"
 node_type: moc
 cluster: phases
-description: "Navigation hub for all 8 thesis phases. Each phase node gates into the next. Phase 3 is a loop until saturation. Phase 4 uses [[argument-mapping]] technique to derive structure from notes."
-description_tr: "8 tez fazının tamamı için navigasyon merkezi. Her faz bir sonrakine geçişi kilitler. Faz 3 doğrusal değil döngüdür — doygunluk algılanana kadar sürer."
+description: "Navigation hub for all 8 thesis phases. Each phase node gates into the next. Phase 3 is a loop (read → critical evaluation → snowball) until saturation. Phase 4 uses [[argument-mapping]] to derive structure from notes."
+description_tr: "8 tez fazının tamamı için navigasyon merkezi. Her faz bir sonrakine geçişi kilitler. Faz 3 döngüdür: oku → eleştirel değerlendir → kartopu örnekle → doygunluğa kadar. Faz 4 [[argument-mapping]] ile notlardan yapı çıkarır."
 tags: [moc, phases, navigation, workflow, sequential, phase-gated]
 cluster_nodes:
   - skills/phases/phase-0-identity.md
@@ -18,12 +18,12 @@ cluster_nodes:
 used_by:
   - skills/INDEX.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # MOC — Fazlar Kümesi / Phases Cluster
 
-Çalışma akışı faz-kilitlidir — [[phase-2-sources]] minimum kaynak sayısını doğrulamadan [[phase-3-reading]]'e girilmez; [[phase-4-structure]]'ın danışman onayı alınmadan [[phase-6-writing]]'e geçilmez. [[phase-3-reading]] özeldir: doygunluk algoritması için [[saturation-check]] ile çalışan bir döngüdür.
+Çalışma akışı faz-kilitlidir — [[phase-2-sources]] minimum kaynak sayısını doğrulamadan [[phase-3-reading]]'e girilmez; [[phase-4-structure]]'ın danışman onayı alınmadan [[phase-6-writing]]'e geçilmez. [[phase-3-reading]] özeldir: oku → [[critical-reading]] ile eleştirel değerlendir → [[snowball-sampling]] ile yeni kaynak keşfet → her 5 kaynakta [[saturation-check]] — döngü.
 
 ## Faz Zinciri
 

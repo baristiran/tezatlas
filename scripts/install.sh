@@ -141,6 +141,13 @@ kur() {
     echo -e "  Bu komutlari Claude Code icinde kullanabilirsiniz."
     echo -e "  Daha fazla bilgi icin: ${BLUE}https://github.com/web3alkan/tezatlas${NC}"
     echo ""
+    echo -e "  ${BOLD}Yerel LLM Kullanicilari Icin:${NC}"
+    echo -e "  TezAtlas platform-agnostiktir. Claude Code disinda:"
+    echo -e "  - Ollama + Qwen 2.5 72B veya Llama 3.1 70B (minimum onerilir)"
+    echo -e "  - /tez-baslat yerine: 'tez-baslat.md dosyasini oku ve uygula'"
+    echo -e "  - Subagent: ayri terminal oturumu veya tmux kullanin"
+    echo -e "  - Kucuk context window (<8K): her alt bolumu ayri oturum olarak isleyin"
+    echo ""
 }
 
 # ============================================================================

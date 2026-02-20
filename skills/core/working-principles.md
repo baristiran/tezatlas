@@ -12,7 +12,7 @@ links_to:
 used_by:
   - skills/moc/MOC-core.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Çalışma Prensipleri / Working Principles
@@ -26,10 +26,12 @@ version: "2.0"
 
 ## B. Context Koruma
 
-- PDF okuma ve kaynak arama mümkünse subagent'e verilir
+- PDF okuma ve kaynak arama mümkünse **ayrı bir göreve / paralel oturuma** verilir
 - Ana context yazım için temiz tutulur
-- Paralel araştırma mümkünse yapılır
-- 1 subagent = 1 görev prensibi
+- Paralel araştırma mümkünse yapılır: 1 görev = 1 odak
+- Context dolmadan oturumu kapat → yeni oturumda devam et
+
+> **Yerel LLM notu:** Claude Code'da bu "subagent" ile yapılır. Ollama/yerel LLM'lerde ayrı bir terminal oturumu veya `tmux` penceresi kullanılabilir. Context window boyutu küçükse (8K altı) her alt bölüm ayrı oturum olarak işle.
 
 ## C. Öz-İyileştirme Döngüsü (DERSLER.md)
 

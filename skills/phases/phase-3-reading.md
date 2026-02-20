@@ -16,6 +16,7 @@ links_to:
   - skills/techniques/snowball-sampling.md
   - skills/techniques/pdf-reading.md
   - skills/techniques/saturation-check.md
+  - skills/techniques/critical-reading.md
   - skills/core/iron-rules.md
   - skills/core/source-policy.md
   - skills/templates/tpl-notlar.md
@@ -37,6 +38,7 @@ Bu fazı uygulamadan ÖNCE şu dosyaları oku:
 - `skills/techniques/pdf-reading.md` — PDF okuma protokolü (metin tabanlı vs taramalı kontrolü, OCR fallback)
 - `skills/techniques/snowball-sampling.md` — dipnot takibiyle kaynak keşif algoritması
 - `skills/techniques/saturation-check.md` — doygunluk tespiti ve faz çıkış kriteri
+- `skills/techniques/critical-reading.md` — eleştirel değerlendirme rubriği (not alma sonrası her kaynak için)
 
 ## Amaç
 
@@ -53,7 +55,12 @@ Kaynak kuyruğundan bir PDF seç
   ↓
 Kaynak oku → sayfa numaralı notlar çıkar → [[tpl-notlar]] formatında _notlar.md'ye yaz
   ↓
-[[snowball-sampling]] algoritmasi: dipnotları tara → yeni kaynaklar keşfet
+[[critical-reading]]: Eleştirel değerlendirme yap
+  → Kaynak güvenilirliği rubriği
+  → "Bu kaynakla hemfikirim / değilim çünkü..." → _notlar.md'ye kaydet
+  → Tezde nasıl konumlandıracağım: Destek / Karşı / Arka plan
+  ↓
+[[snowball-sampling]] algoritması: dipnotları tara → yeni kaynaklar keşfet
   ↓
 Okuma raporunu güncelle
   ↓

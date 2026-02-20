@@ -11,12 +11,13 @@ links_to:
   - skills/phases/phase-3-reading.md
   - skills/phases/phase-6-writing.md
   - skills/techniques/snowball-sampling.md
+  - skills/techniques/critical-reading.md
 used_by:
   - skills/phases/phase-3-reading.md
   - skills/phases/phase-6-writing.md
   - skills/techniques/pdf-reading.md
 language: bilingual
-version: "2.1"
+version: "2.2"
 ---
 
 # Şablon: _notlar.md
@@ -46,13 +47,20 @@ version: "2.1"
 - s.45: Knapp (1905) Staatliche Theorie des Geldes → /kaynaklar/'da [VAR/YOK]
 - s.67: Menger (1892) → /kaynaklar/'da [VAR/YOK] → [İNDİRİLECEK]
 
+### Eleştirel Değerlendirme
+- Bu kaynakla: [ ] Hemfikirim [ ] Kısmen hemfikirim [ ] Değilim
+- Gerekçe: [Neden? — 1-2 cümle]
+- Metodolojik güç: [Ne iyi yapılmış?]
+- Metodolojik zayıflık / önyargı: [Nerede yetersiz veya taraflı?]
+- Tezimde nasıl konumlandıracağım: [ ] Destek [ ] Karşı argüman [ ] Arka plan [ ] Çürütülecek
+
 ### Diğer kaynaklarla bağlantılar
 - Bu kaynak s.45 argümanı ↔ Şu kaynak s.12: [bağlantı açıklaması]
 
 ---
 
 ## Kaynak 2: [Yazar, Kısa Başlık, Yıl]
-[aynı yapı...]
+[aynı yapı — Eleştirel Değerlendirme dahil]
 
 ---
 
