@@ -24,10 +24,17 @@ used_by:
   - skills/phases/phase-5-protocol.md
   - skills/phases/phase-7-finalization.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Faz 6 — Oku ve Yaz / Phase 6 — Read and Write
+
+## Bu Fazda Yüklenecek Node'lar
+
+Bu fazı uygulamadan ÖNCE şu dosyaları oku:
+
+- `skills/techniques/session-structure.md` — oturum başı/sonu ritüeli, tam protokol
+- `skills/tooling/git-workflow.md` — oturum sonu zorunlu commit prosedürü
 
 ## Amaç
 

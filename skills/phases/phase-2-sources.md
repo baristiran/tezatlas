@@ -23,10 +23,17 @@ used_by:
   - skills/phases/phase-1-topic.md
   - skills/phases/phase-3-reading.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Faz 2 — Çekirdek Kaynak Avı / Phase 2 — Core Source Hunt
+
+## Bu Fazda Yüklenecek Node'lar
+
+Bu fazı uygulamadan ÖNCE şu dosyaları oku:
+
+- `skills/techniques/snowball-sampling.md` — kartopu örnekleme algoritması
+- `skills/tooling/annas-archive.md` — PDF indirme aracı ve protokolü
 
 ## Amaç
 

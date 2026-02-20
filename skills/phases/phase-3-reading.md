@@ -25,10 +25,18 @@ used_by:
   - skills/phases/phase-2-sources.md
   - skills/phases/phase-4-structure.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Faz 3 — Okuma ve Kartopu Keşif / Phase 3 — Reading and Snowball Discovery
+
+## Bu Fazda Yüklenecek Node'lar
+
+Bu fazı uygulamadan ÖNCE şu dosyaları oku:
+
+- `skills/techniques/pdf-reading.md` — PDF okuma protokolü (metin tabanlı vs taramalı kontrolü, OCR fallback)
+- `skills/techniques/snowball-sampling.md` — dipnot takibiyle kaynak keşif algoritması
+- `skills/techniques/saturation-check.md` — doygunluk tespiti ve faz çıkış kriteri
 
 ## Amaç
 

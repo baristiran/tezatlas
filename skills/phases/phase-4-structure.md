@@ -22,10 +22,16 @@ used_by:
   - skills/phases/phase-3-reading.md
   - skills/phases/phase-5-protocol.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Faz 4 — Yapı Tasarımı / Phase 4 — Structure Design
+
+## Bu Fazda Yüklenecek Node'lar
+
+Bu fazı uygulamadan ÖNCE şu dosyayı oku:
+
+- `skills/techniques/argument-mapping.md` — okuma notlarından yapı çıkarma tekniği (5 adım: küme → RQ eşleme → boşluk tespiti → bölüm sınırları → yapi_taslagi)
 
 ## Amaç
 
