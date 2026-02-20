@@ -1,424 +1,424 @@
 # TezAtlas
 
-**Akademik tez yazımı için AI destekli skill graph sistemi.**
+**AI ile akademik tez yazan öğrenciler için açık kaynaklı yardımcı sistem.**
 
-TezAtlas, yüksek lisans ve doktora öğrencilerinin AI (Claude, GPT, Gemini veya yerel LLM'ler) ile birlikte tez yazmasına yardımcı olan açık kaynaklı bir çerçevedir. Monolitik bir prompt dosyası yerine, birbirine bağlı **skill node**'larından oluşur — AI yalnızca o an gereken bilgiyi yükler.
+TezAtlas, bir yüksek lisans veya doktora öğrencisinin tezini AI ile birlikte yazmasını sağlar. Sıfırdan başlayıp savunmaya hazır bir teze kadar her adımı yönlendirir: konu belirleme, kaynak bulma, okuma, yapı tasarımı ve bölüm yazımı.
 
 ---
 
-## Hızlı Başlangıç
+## Kimler İçin?
 
+- Tez yazmaya yeni başlayan yüksek lisans / doktora öğrencileri
+- AI'ı tez sürecinde nasıl kullanacağını bilmeyenler
+- Claude Code, ChatGPT, Gemini veya bilgisayarında çalışan yerel AI kullananlar
+- Bilgisayar bilgisi gerektirmez — yalnızca temel dosya işlemleri yeterlidir
+
+---
+
+## Başlamadan Önce Ne Gerekiyor?
+
+**Zorunlu:**
+- Bir AI aracı (birini seç):
+  - **Claude Code** (önerilir — en iyi entegrasyon)
+  - ChatGPT, Gemini veya benzeri bir web AI
+  - Bilgisayarında çalışan yerel AI (Ollama vb.)
+- İnternet bağlantısı (kurulum için)
+
+**Gerekmez:**
+- GitHub hesabı
+- Programlama bilgisi
+- Komut satırı deneyimi (yalnızca birkaç basit komut yeterli)
+
+---
+
+## Kurulum — Adım Adım
+
+### Yöntem A: Claude Code Kullananlar İçin (Önerilir)
+
+**Adım 1 — TezAtlas'ı bilgisayarına indir**
+
+Sağ üstteki yeşil "Code" düğmesine tıkla → "Download ZIP" seç → İndirilen dosyayı aç.
+
+Ya da terminali açıp şunu yaz:
 ```bash
-# Repoyu klonla
 git clone https://github.com/baristiran/tezatlas.git
+```
+
+**Adım 2 — Kurulum scriptini çalıştır**
+
+Mac veya Linux kullanıyorsan terminali aç ve şunu yaz:
+```bash
 cd tezatlas
-
-# Kurulum (slash command'ları yükler)
 ./scripts/install.sh
+```
 
-# Tez projen için yeni bir klasör oluştur
-mkdir ~/tezim && cd ~/tezim
+Windows kullanıyorsan Git Bash veya WSL terminali aç, aynı komutu çalıştır.
 
-# Başlat
-# Claude Code kullanıyorsan:
+Ekranda şu mesajı görürsen kurulum tamamdır:
+```
+[BASARILI] TezAtlas basariyla kuruldu!
+```
+
+> **install.sh ne yapıyor?** Yalnızca birkaç komut dosyasını `~/.claude/commands/` klasörüne kopyalıyor. Sisteminizde hiçbir değişiklik yapmaz, hiçbir yazılım yüklemez.
+
+**Adım 3 — Tez projen için bir klasör oluştur**
+
+Belgelerim veya Masaüstü'nde yeni bir klasör oluştur. Adını tezin konusuyla ilgili bir şey yap. Örnek: `hukuk-tezim`
+
+**Adım 4 — Kaynaklar klasörü oluştur**
+
+Az önce oluşturduğun klasörün içine `kaynaklar` adında bir alt klasör oluştur. PDF kaynaklarını buraya koyacaksın.
+
+```
+hukuk-tezim/
+└── kaynaklar/       ← PDF'lerin buraya gidecek
+```
+
+**Adım 5 — Claude Code'u tez klasöründe aç**
+
+Claude Code'u aç → "Open Folder" → az önce oluşturduğun tez klasörünü seç.
+
+**Adım 6 — Başlat**
+
+Claude Code'da yazı yazma alanına şunu yaz ve Enter'a bas:
+```
 /tez-baslat
-
-# Yerel LLM / başka bir AI kullanıyorsan:
-# "tez-baslat.md dosyasını oku ve içindeki talimatları uygula" de
 ```
 
-**Yerel LLM Kullanıcıları:** TezAtlas platform-agnostiktir. Önerilen minimum: Ollama + Qwen 2.5 72B veya Llama 3.1 70B. Context window < 8K ise her alt bölümü ayrı oturumda işle.
+İngilizce kullanıyorsan:
+```
+/thesis-start
+```
+
+Claude sana sorular sormaya başlayacak. Cevapla, başlasın.
 
 ---
 
-## Sistem Nasıl Çalışır
+### Yöntem B: Claude Code Olmadan (ChatGPT, Gemini, Web AI)
 
-### Skill Graph Mimarisi
+**Adım 1 — TezAtlas'ı indir**
 
-TezAtlas, birbirine wikilink'lerle bağlı markdown dosyalarından oluşur:
+GitHub sayfasında yeşil "Code" → "Download ZIP" → dosyayı aç.
 
+**Adım 2 — Başlangıç dosyasını bul**
+
+İndirdiğin klasörde şu dosyayı aç:
 ```
-skills/INDEX.md               ← harita
-  ├── skills/moc/             ← navigasyon merkezi (5 MOC)
-  ├── skills/core/            ← her zaman aktif (Demir Kurallar, Kaynak Politikası vb.)
-  ├── skills/phases/          ← 8 faz (0-7)
-  ├── skills/techniques/      ← teknikler (kartopu, eleştirel okuma, argüman değerlendirme vb.)
-  ├── skills/templates/       ← dosya şablonları
-  └── skills/tooling/         ← araçlar (Anna's Archive, veritabanı erişimi, git)
+tezatlas/.claude/commands/tez-baslat.md
 ```
 
-Her node dosyası bir YAML frontmatter ile başlar. AI tam dosyayı okumadan tarama yapabilir, yalnızca gerekli ~5-7 node yükler (~400-600 token) — 1000+ satırlık monolitik bir prompt dosyası yerine.
+**Adım 3 — AI'ya dosyayı ver**
 
-### Oturum Başında AI Ne Yapar?
+Bu dosyanın tüm içeriğini kopyala → kullandığın AI'nın sohbet kutusuna yapıştır → Enter.
 
-Her oturumun başında AI şu dosyaları okur:
-1. `tezprotokol.md` — projeye özgü kural ve hedefler
-2. `MEMORY.md` — sayısal ilerleme (makine okunabilir)
-3. `DURUM_OZETI.md` — anlatısal ilerleme (insan okunabilir)
-4. `DERSLER.md` — önceki oturumlardan öğrenilen dersler
-5. `TERMINOLOJI.md` — proje terminoloji sözlüğü
+AI, sanki `/tez-baslat` yazılmış gibi süreci başlatacak.
 
-Ardından hedef bölümün `_notlar.md` dosyasını okur ve çalışmaya başlar.
+**Adım 4 — Sonraki oturumlarda**
+
+Her yeni oturumda AI'na şunu söyle:
+> "tezatlas/skills/core/context-management.md dosyasını oku ve talimatları uygula. Tez projem: [MEMORY.md ve DURUM_OZETI.md dosyalarının içeriğini buraya yapıştır]"
 
 ---
 
-## 8 Faz — Adım Adım Tez Süreci
+### Yöntem C: Yerel AI (Ollama, LM Studio vb.)
+
+**Minimum gereksinim:** Qwen 2.5 72B veya Llama 3.1 70B (daha küçük modeller çalışır ama kalite düşer)
+
+**Başlatmak için:**
+```
+"tezatlas/.claude/commands/tez-baslat.md dosyasını oku ve içindeki talimatları uygula"
+```
+
+**Context window küçükse (8K altı):** Her alt bölümü ayrı oturumda işle. Oturum başında MEMORY.md ve DURUM_OZETI.md'yi yapıştır.
+
+---
+
+## İlk Kullanımda Ne Olur? — Adım Adım
+
+### AI sana sorular sorar, sen cevaplarsın
+
+`/tez-baslat` yazdıktan sonra AI şu bilgileri senden ister:
+
+| Soru | Örnek cevap |
+|------|-------------|
+| Hangi üniversite? | "Ankara Üniversitesi" |
+| Hangi enstitü ve program? | "Sosyal Bilimler Enstitüsü, Kamu Hukuku YL" |
+| Danışman adı? | "Prof. Dr. Ahmet Yılmaz" |
+| Tez dili? | "Türkçe" |
+| Atıf sistemi? | "Chicago" (bilmiyorsan "danışmanım söylemedi" de, AI önerir) |
+| Teslim tarihi? | "Haziran 2026" |
+| Konu hakkında ne düşünüyorsun? | Birkaç cümle, istediğin kadar kısa olabilir |
+
+Bunları cevapladıktan sonra AI süreci başlatır.
+
+---
+
+## 8 Faz — Tezin Nasıl İlerler
+
+TezAtlas tez sürecini 8 adıma böler. Her adım tamamlanmadan sonrakine geçilmez.
+
+---
 
 ### Faz 0 — Kimlik Toplama
+**Süre:** 15-30 dakika
 
-**Kullanıcı yapar:** AI `tez-baslat.md` protokolüyle sorular sorar; kullanıcı cevaplar.
+AI senden temel bilgileri toplar ve `proje_kimlik.md` dosyasını oluşturur. Bu dosya üniversitene, programına, danışmanına ve atıf sistemine özel kuralları içerir.
 
-**Ne sorulur:**
-- Hangi üniversite? Hangi enstitü? Hangi program? (YL / Doktora)
-- Danışman adı, teslim tarihi, kelime limiti
-- Tez dili (TR / EN / DE)
-- Atıf sistemi (Chicago, APA 7, Harvard, IEEE, OSCOLA, Vancouver)
-- Disiplin (Hukuk, Sosyal Bilimler, Mühendislik, Fen Bilimleri, Tıp, İşletme, Eğitim, Beşeri Bilimler)
-
-**AI yapar:** Cevapları `proje_kimlik.md` dosyasına kaydeder. Üniversiteye özgü format kurallarını yükler.
-
-**Çıktı:** `proje_kimlik.md`
+**Sen ne yaparsın:** Soruları cevapla.
+**AI ne üretir:** `proje_kimlik.md`
 
 ---
 
 ### Faz 1 — Konu Keşfi ve Başlık
+**Süre:** 1-3 oturum
 
-**Ne olur:** AI sana 5 farklı tez başlığı alternatifi sunar. Sen birini seçersin veya birleştirirsin.
+AI sana 5 farklı tez başlığı alternatifi sunar. Her biri için şunları gösterir:
+- Araştırma sorusu ("Bu tez ne soruyor?")
+- Tez iddiası ("Bu tez ne savunuyor?")
+- Önerilen yöntem
+- Gerçekçilik analizi (6-8 ayda tamamlanabilir mi?)
 
-**AI ne yapar:**
-1. Disiplinindeki güncel tartışmaları ve boşlukları listeler
-2. Her başlık alternatifi için: araştırma sorusu, hipotez/tez iddiası, metodoloji önerisi ve çalışabilirlik analizi (6 ay / 1 yıl kapsamı) üretir
-3. Sen seçtikten sonra kesinleştirir
+**Sen ne yaparsın:** 5 alternatiften birini seçersin, istersen birleştirirsin veya kendi başlığını söylersin. AI kesinleştirir.
 
-**Başlık kriterleri:**
-- Netlik: okuyucu konuyu tek cümlede anlayabilmeli
-- Özgünlük: mevcut literatürde boşluk doldurmalı
-- Kapsamlılık: YL için 6-8 ay, Doktora için 2-3 yıl gerçekçi
-- Danışman uyumluluğu: danışmanın uzmanlık alanıyla örtüşmeli
+**Önemli:** Başlığı danışmanına göster ve onayını al. Onay olmadan bir sonraki adıma geçme.
 
-**Çıktı:** `konu_kesfi.md` (5 alternatif + seçim gerekçesi + kesinleşmiş başlık)
-
-**⚠️ Faz Geçiş Koşulu:** Danışman başlığı onaylamadan Faz 2'ye geçilmez.
+**AI ne üretir:** `konu_kesfi.md`
 
 ---
 
-### Faz 2 — Çekirdek Kaynak Avı
+### Faz 2 — Kaynak Toplama
+**Süre:** 2-5 oturum
 
-**Ne olur:** Tezin için minimum kaynak tabanı oluşturulur.
+**Önce sen yaparsın:**
+1. Elinde varsa, konuyla ilgili PDF'leri `kaynaklar/` klasörüne kopyala
+2. Dosya adlarını şu formata göre değiştir: `Yazar_Yil_KisaBaslik.pdf`
+   - Örnek: `Teziç_2003_Anayasa_Hukuku.pdf`
+   - Örnek: `Locke_1690_Two_Treatises.pdf`
+   - Türkçe karakter kullanma, boşluk yerine alt çizgi koy
 
-**Kullanıcı ne yapar:**
-1. Elindeki PDF'leri `/kaynaklar/` klasörüne kopyalar
-2. Dosya adlarını standartlaştırır: `Yazar_Yil_KisaBaslik.pdf`
-   - Örnek: `Bodin_1576_Six_Books.pdf`, `Aristoteles_BC350_Politika.pdf`
-3. AI, `/kaynaklar/` klasörünü tarar ve mevcut kaynakları `KAYNAK_ENVANTERI.md`'ye kaydeder
+**Sonra AI devam eder:**
+- `kaynaklar/` klasörünü tarar, elindeki kaynakları listeler
+- Eksik kaynak türlerini belirler
+- Anna's Archive üzerinden eksik kaynakları bulmaya çalışır
+- Bulamazsa: "Şu kaynağı bulamadım, üniversite kütüphanesinden indirebilir misiniz?" der
 
-**AI ne yapar:**
-1. Mevcut kaynakları değerlendirir (hakemli mi? ne kadar güncel? disipline uygun mu?)
-2. Eksik kaynak türlerini belirler
-3. Anna's Archive üzerinden eksik kaynakları aramaya çalışır
-4. Bulunamazsa: SSRN → arXiv → CORE → ResearchGate → Unpaywall zincirini dener
-5. Hâlâ bulunamazsa: kurumsal VPN bağlantısı için yönlendirme mesajı verir
-
-**Minimum kaynak hedefleri:**
-- YL: en az 30 kaynak (≥15 hakemli makale)
-- Doktora: en az 60 kaynak (≥30 hakemli makale)
-
-**Çıktı:** `KAYNAK_ENVANTERI.md` (tüm kaynaklar, kalite notu, durum)
-
-**⚠️ Faz Geçiş Koşulu:** Minimum sayı karşılanmadan Faz 3'e geçilmez.
+**AI ne üretir:** `KAYNAK_ENVANTERI.md` (tüm kaynakların listesi)
 
 ---
 
-### Faz 3 — Okuma ve Kartopu Keşif (DÖNGÜ)
+### Faz 3 — Okuma ve Not Alma
+**Süre:** Kaynakların kalabalığına göre 2-8 hafta
 
-**Bu faz bir döngüdür.** Doygunluk kriterine ulaşılana kadar tekrar eder.
+Bu aşama bir **döngüdür** — otur, devam et, bir sonraki oturumda kaldığın yerden devam et.
 
-**Döngü nasıl işler:**
+**Her oturumda ne olur:**
+1. AI bir PDF'i okur
+2. Sayfa numaralı notlar çıkarır
+3. Her kaynak için değerlendirme yapar: "Bu kaynak tezi destekliyor mu, karşı argüman mı, sadece arka plan mı?"
+4. PDF'in dipnotlarından yeni kaynak önerileri çıkarır (kartopu örnekleme)
+5. `OKUMA_RAPORU.md`'yi günceller
 
-```
-Kaynak kuyruğundan PDF seç
-  ↓
-PDF'i oku → sayfa numaralı notlar çıkar → _notlar.md'ye yaz
-  ↓
-Eleştirel değerlendirme:
-  • Kaynak güvenilirliği puanı (1-15)
-  • "Bu kaynakla hemfikirim / değilim çünkü..."
-  • Tezdeki konumu: Destek / Karşı / Arka plan
-  ↓
-Dipnotları tara → yeni kaynaklar keşfet → kuyruğa ekle
-  ↓
-OKUMA_RAPORU.md güncelle
-  ↓
-Her 5 kaynakta bir: Doygunluk kontrolü
-  ├─ Doygunluk YOK (yeni kavram ve kaynak geliyor) → döngüye devam
-  └─ Doygunluk VAR → Faz 4'e geç
-```
+**Hangi PDF'in okunduğunu nasıl görürsün?**
+`OKUMA_RAPORU.md` dosyasını aç. Tablo halinde şunları görürsün:
+- ✅ TAMAMLANDI — o PDF okundu, notlar çıkarıldı
+- ⏳ SIRA BEKLİYOR — sıraya alındı
+- 🔄 DEVAM EDİYOR — şu an okunuyor
 
-**Kullanıcı ne görür?**
+Her 5 kaynaktan sonra AI "doygunluk kontrolü" yapar: yeni kavram ve kaynak azaldıysa "Faz 4'e geçebiliriz" der.
 
-`OKUMA_RAPORU.md` — canlı ilerleme panosu:
-- ✅ Okunan kaynaklar (tarih, not dosyası)
-- ⏳ Bekleyen sıra
-- 🔍 Kartopu ile keşfedilen yeni kaynaklar
-- 📊 Doygunluk kontrol sonuçları
-
-**Not alma formatı (`_notlar.md`):**
-```
-### Yazar, Yıl: Başlık (s. X-Y)
-**Temel argüman:** [1 cümle özet]
-**Önemli alıntı:** "..." (s. X)
-**Eleştirel değerlendirme:** [Güvenilirlik puanı, önyargı tespiti]
-**Tezdeki konumu:** [Destek / Karşı / Arka plan]
-```
-
-**Çıktılar:**
-- `_notlar.md` dosyaları (bölüm/kaynak gruplarına göre)
-- `OKUMA_RAPORU.md`
-- Güncellenmiş `KAYNAK_ENVANTERI.md`
-
-**⚠️ Faz Geçiş Koşulu:** Doygunluk kriterine ulaşılmadan Faz 4'e geçilmez.
+**AI ne üretir:** `_notlar.md` dosyaları + `OKUMA_RAPORU.md`
 
 ---
 
 ### Faz 4 — Yapı Tasarımı
+**Süre:** 2-4 oturum
 
-**Ne olur:** Okuma notlarından tez yapısı çıkarılır. Yapı önceden değil, notlardan belirlenir.
+AI, okuduğu notlardan tezin yapısını çıkarır. **Yapıyı senden önce belirlemez** — önce okur, sonra yapıyı önerir.
 
-**AI ne yapar (5 adım):**
+**AI ne yapar:**
+- Notlardaki temaları gruplar
+- Bölüm başlıkları önerir
+- Her bölüme hangi kaynakların gideceğini belirler
+- Her bölüm için kelime hedefi verir (örn. Giriş: 3.000, Bölüm 1: 8.000...)
+- Hangi bölümün önce yazılacağını önerir
 
-1. **Okuma sentezi:** `_notlar.md` dosyalarını tarar, ana temaları gruplar
-2. **Argüman kümeleri:** Hangi iddialar birbirine bağlı? Hangileri çatışıyor?
-3. **Yapı önerisi:** Bölüm ve alt bölüm başlıkları önerir
-4. **Harita çıkarma:** Her bölüme kaynak atar (hangi kaynak nerede kullanılacak)
-5. **Yazım sırası:** Hangi bölüm önce yazılmalı? (genellikle teorik çerçeve → metodoloji → bulgular)
+**Sen ne yaparsın:** "Bu yapı mantıklı mı?" diye düşün. Değilse söyle, AI yeniden düzenler.
 
-**Çıktı — `yapi_taslagi.md` şu bilgileri içerir:**
-- Bölüm başlıkları ve alt bölümler
-- Her bölüm için hedef kelime sayısı
-- Her bölüme atanan kaynaklar
-- Önerilen yazım sırası
-- Tez genelinde argüman akışı özeti
+**Önemli:** Bu yapıyı danışmanına göster ve onayını al. **Danışman onayı olmadan Faz 5'e geçme.**
 
-**Kullanıcı kontrol eder:** "Bu yapı mantıklı mı? Eksik bir alan var mı?"
-
-**Çıktılar:** `yapi_taslagi.md`, `KAYNAK_HARITASI.md`
-
-**⚠️ Faz Geçiş Koşulu:** Danışman yapıyı onaylamadan Faz 5'e geçilmez (kritik kontrol noktası).
+**AI ne üretir:** `yapi_taslagi.md`, `KAYNAK_HARITASI.md`
 
 ---
 
-### Faz 5 — Protokol Üretimi
+### Faz 5 — Proje Protokolü
+**Süre:** 1 oturum
 
-**Ne olur:** Projeye özgü çalışma protokolü oluşturulur. Bu dosyalar her oturumda okunur.
+AI, tüm bilgileri bir araya getirerek projeye özgü çalışma dosyaları oluşturur. Bu dosyalar bundan sonra **her oturumun başında okunur**.
 
-**AI ne üretir:**
+| Dosya | Ne işe yarar |
+|-------|-------------|
+| `tezprotokol.md` | Tüm kurallar, yapı, hedefler — projenin anayasası |
+| `CLAUDE.md` | AI'nın her oturum başında okuduğu talimatlar |
+| `MEMORY.md` | Sayısal ilerleme (kaçıncı bölüm, kaç kelime, hangi dipnot) |
+| `DURUM_OZETI.md` | Sana okunabilir ilerleme özeti |
+| `TERMINOLOJI.md` | Projene özel terimler sözlüğü |
+| `DERSLER.md` | Danışman veya senden gelen düzeltmeler birikir |
 
-| Dosya | İçerik |
-|-------|--------|
-| `tezprotokol.md` | 10 bölümlük proje anayasası (başlık, yapı, kurallar, kısıtlamalar) |
-| `CLAUDE.md` | AI'ya proje başında okuması için talimatlar |
-| `MEMORY.md` | Sayısal ilerleme dosyası (makine okunabilir) |
-| `DURUM_OZETI.md` | Anlatısal ilerleme dosyası (insan okunabilir) |
-| `TERMINOLOJI.md` | Proje terminoloji sözlüğü |
-| `DERSLER.md` | Birikimsel öğrenme defteri |
+Bu dosyalar sayesinde oturumu kapatıp açsan bile AI tam olarak nerede kaldığını bilir.
 
-`tezprotokol.md` içeriği:
-```
-1. Proje kimliği (başlık, üniversite, program, danışman, tarih)
-2. Tez yapısı (bölümler, kelime hedefleri)
-3. Atıf sistemi ve kurallar
-4. Dil ve terminoloji standartları
-5. Kaynak politikası
-6. İş akışı kuralları
-7. Danışman tercihleri
-8. Kısıtlamalar ve kırmızı çizgiler
-9. Güçlü yönler ve odak alanları
-10. Hedef savunma tarihi ve geri sayım
-```
-
-**Çıktılar:** `tezprotokol.md`, `CLAUDE.md`, `MEMORY.md`, `DURUM_OZETI.md`, `TERMINOLOJI.md`, `DERSLER.md`
+**AI ne üretir:** Yukarıdaki 6 dosya
 
 ---
 
-### Faz 6 — Oku ve Yaz (DÖNGÜ)
+### Faz 6 — Yazım
+**Süre:** Tezin uzunluğuna göre 4-16 hafta
 
-**Bu faz da bir döngüdür.** Her bölüm için okuma-yazma döngüsü tekrar eder.
+Burada gerçek tez yazılır. Her oturumda bir alt bölüm hedeflenir.
 
-**Üç oturum türü:**
+**Temel kural: Kaynak yoksa cümle yazılmaz.**
 
-| Tür | Ne zaman | Ne yapılır |
-|-----|----------|------------|
-| **Okuma Oturumu** | Kaynak karmaşık/uzunsa | Sadece PDF oku + `_notlar.md` güncelle |
-| **Yazım Oturumu** | Notlar hazırsa | `_notlar.md` okuyarak paragraf paragraf yaz |
-| **Tek Oturum** | Kısa bölümler için | Okuma + not + yazım aynı anda |
-
-**Yazım kuralı — KAYNAK YOKSA YAZILMAZ:**
-
+Eğer bir paragraf için `kaynaklar/` klasöründe PDF yoksa AI şunu yapar:
 ```
-AI bir paragraf yazıyor → kaynak lazım → /kaynaklar/'da var mı?
-  ├─ EVET → oku, sayfa bul, dipnot yaz, devam et
-  └─ HAYIR → YAZIMI DURDUR
-       → Kaynak bul (Anna's Archive veya kullanıcıya sor)
-       → [KAYNAK BEKLENİYOR: konu, önerilen kaynak] etiketi koy
-       → Başka paragraftan devam et
+[KAYNAK BEKLENİYOR: Ana egemenlik teorisi için Bodin'in Six Books of the Republic
+ eseri gerekli. Anna's Archive'da arandı, bulunamadı.
+ Lütfen bu kaynağı temin edip kaynaklar/ klasörüne ekleyin.]
 ```
+O paragrafı bekletir, başka paragraftan devam eder.
 
 **Her paragrafın yapısı:**
-```
-1. Konu cümlesi (bu paragraf ne iddia ediyor?)
-2. Argüman (neden doğru?)
-3. Kanıt (hangi kaynaktan? hangi sayfadan?)
-4. Dipnot (tam formatta)
-5. Geçiş (sonraki paragrafla bağlantı)
-```
+1. Konu cümlesi → 2. Argüman → 3. Kaynak ve sayfa → 4. Dipnot → 5. Geçiş
 
-**Kalite kontrol (her bölüm sonrası):**
-- Her paragrafta kaynaklı atıf var mı?
-- Atıflar `/kaynaklar/` PDF'lerinden mi?
-- Terminoloji tutarlı mı?
-- Argüman mantık zinciri tam mı? (varsayım → kanıt → sonuç)
-- En güçlü karşı argüman ele alındı mı?
+**Oturum sonu zorunluları:**
+- `MEMORY.md` güncellenir
+- `DURUM_OZETI.md` güncellenir
+- Git commit atılır (otomatik)
 
-**Oturum sonu (her seferinde):**
-- `MEMORY.md` + `DURUM_OZETI.md` güncelle
-- `TERMINOLOJI.md` + `DERSLER.md` güncelle
-- Git commit (Demir Kural 6: ZORUNLU)
-
-**Çıktılar:** `chapter_X_Y.md` dosyaları (her alt bölüm ayrı dosya)
+**AI ne üretir:** `chapter_X_Y.md` dosyaları
 
 ---
 
-### Faz 7 — Bitiriş ve Savunma Hazırlığı
+### Faz 7 — Bitiriş ve Savunma
+**Süre:** 1-2 hafta
 
-**Ne olur:** Tez tamamlandıktan sonra savunma için hazırlanılır.
+Tüm bölümler yazıldıktan sonra:
 
-**Adım 1 — Tez Geneli Tutarlılık Kontrolü:**
-- Girişteki araştırma soruları sonuçta cevaplanmış mı?
-- "Bölüm X'te ele alınacak" ifadeler gerçekten ele alındı mı?
-- Dipnot numaraları ardışık mı?
-- `[KAYNAK BEKLENİYOR]` etiketi kalmadı mı?
+**1. Tutarlılık kontrolü:**
+- Girişteki sorular sonuçta cevaplanmış mı?
+- Dipnot numaraları sıralı mı?
 - Terminoloji baştan sona tutarlı mı?
+- Bekleyen kaynak etiketi kaldı mı?
 
-**Adım 2 — Karşı Argümanlar Belgesi:**
+**2. AI sana sorular sorar, sen cevaplarsın:**
+> "Tezinizin kaç ana argümanı var?" → cevapla
+> "Bu argümana jüri ne itiraz edebilir?" → cevapla
+> "Bu itiraza hangi kaynakla yanıt verirsiniz?" → cevapla
 
-AI sana soru sorar, cevaplarından `KARSI_ARGUMANLAR.md` üretir:
-1. "Tezinizin kaç ana argümanı var?"
-2. "Bu argümana jüri ne itiraz edebilir?"
-3. "Bu itiraza hangi kaynakla yanıt verirsiniz?"
-4. "Metodolojinizle ilgili beklediğiniz itirazlar?"
+Cevaplarından `KARSI_ARGUMANLAR.md` ve `SAVUNMA_SORULARI.md` dosyaları oluşturulur.
 
-**Adım 3 — Savunma Soruları:**
+**AI ne üretir:** `KARSI_ARGUMANLAR.md`, `SAVUNMA_SORULARI.md`, `TUTARLILIK_KONTROLU.md`
 
-AI sistematik olarak şunları üretir:
-- Teorik çerçeveye yönelik sorular
-- Metodoloji soruları
-- Literatür boşluğu soruları
-- "Neden bu metodoloji?" soruları
-- "Katkınız nedir?" sorusu ve model cevabı
+---
 
-**Adım 4 — Son Biçimlendirme:**
-- Kapak sayfası, içindekiler, kısaltmalar listesi kontrolü
-- Tablo/şekil listesi kontrolü
-- Kaynakça son kontrol (seçilen atıf sistemine göre)
+## Oturum Aralarında Ne Olur?
 
-**Çıktılar:** `KARSI_ARGUMANLAR.md`, `SAVUNMA_SORULARI.md`, `TUTARLILIK_KONTROLU.md`
+**AI her şeyi "unutur" — ama TezAtlas bunu çözer.**
+
+Her oturumun başında AI şu dosyaları okur:
+1. `tezprotokol.md` — projenin kuralları
+2. `MEMORY.md` — sayısal ilerleme (hangi bölüm, kaç dipnot, nerede kaldı)
+3. `DURUM_OZETI.md` — son oturumda ne yapıldı
+4. `DERSLER.md` — daha önce yapılan hatalar ve düzeltmeler
+5. `TERMINOLOJI.md` — projeye özel terimler
+
+Bu sayede yeni oturumda "geçen sefer neredeydiniz?" sorusu olmaz. AI tam olarak nerede kaldığını bilir.
+
+---
+
+## Kaynak İndirme
+
+TezAtlas kaynakları bulmak için önce kendi dener, bulamazsa senden ister.
+
+**AI'nın denediği sıra:**
+```
+1. /kaynaklar/ klasörüne bak (zaten var mı?)
+2. Anna's Archive'da ara
+3. CORE, arXiv, SSRN, ResearchGate, Unpaywall'da ara
+4. Bulamazsa: "Bu kaynağı üniversite kütüphanesinden indirir misiniz?" der
+```
+
+**Anna's Archive API anahtarı (isteğe bağlı):**
+
+API anahtarı varsa AI daha hızlı indirir. Yoksa yine çalışır ama bazı kaynaklar için tarayıcıya yönlendirir.
+
+Anahtarı güvenli kaydetmek için:
+```bash
+cd tezatlas
+./scripts/annas_archive_helper.sh setup-api-key
+```
+
+Sihirbaz soruları sorar, anahtarı güvenli bir yere kaydeder. Git'e gitmez.
 
 ---
 
 ## Demir Kurallar
 
-1. **Kaynaksız yazım YASAK** — `/kaynaklar/` klasöründe PDF yoksa o paragraf yazılmaz
-2. **Kartopu örnekleme ZORUNLU** — her kaynağın dipnotları taranır
-3. **AI önce kendisi indirir** — Anna's Archive + açık erişim önce denenir
-4. **Uydurma atıf = akademik suç** — hafızadan kaynak uydurmak kesinlikle yasak
-5. **Danışman kontrol noktaları atlanamaz** — Faz 1 (başlık), Faz 3 (okuma raporu), Faz 4 (yapı) ve Faz 7 (bitiriş) danışman onayı gerektirir
-6. **Oturum sonu git commit ZORUNLU** — her oturumun sonunda commit atılır
+Bunlar değiştirilemez. AI bu kurallara her zaman uyar:
 
----
-
-## Anna's Archive Entegrasyonu
-
-TezAtlas, akademik kaynak indirme için Anna's Archive'ı kullanır.
-
-**API anahtarı kurulumu (isteğe bağlı, daha hızlı indirme için):**
-
-```bash
-# Etkileşimli kurulum asistanı
-./scripts/annas_archive_helper.sh setup-api-key
-
-# Manuel: ~/.tezatlas_config dosyası oluştur
-echo "ANNAS_ARCHIVE_API_KEY=anahtariniz" > ~/.tezatlas_config
-chmod 600 ~/.tezatlas_config
-```
-
-**Script kullanımı:**
-
-```bash
-# Kaynak ara
-./scripts/annas_archive_helper.sh search "Bodin sovereignty theory"
-
-# URL ile indir
-./scripts/annas_archive_helper.sh download "https://..." "Bodin_1576_Six_Books.pdf"
-
-# MD5 hash ile indir (Anna's Archive'dan)
-./scripts/annas_archive_helper.sh md5 abc123def456 "Bodin_1576_Six_Books.pdf"
-
-# /kaynaklar/'da ara
-./scripts/annas_archive_helper.sh check "Bodin"
-
-# İstatistikler
-./scripts/annas_archive_helper.sh stats
-```
-
-**API anahtarı güvenlik notu:**
-- Anahtarı asla Git'e commit etme
-- `.tezatlas/config` veya `~/.tezatlas_config` dosyasına yaz
-- Kurulum asistanı `.gitignore`'a otomatik ekler
-
-**İndirme bulunamazsa fallback zinciri:**
-```
-Anna's Archive → CORE → arXiv → SSRN → ResearchGate → Unpaywall → Kurumsal VPN → Kullanıcıdan iste
-```
-
----
-
-## Desteklenen Disiplinler, Atıf Sistemleri ve Üniversiteler
-
-| Kategori | İçerik |
-|----------|--------|
-| **Disiplinler** | Hukuk, Sosyal Bilimler, Mühendislik, Fen Bilimleri, Tıp, İşletme, Eğitim, Beşeri Bilimler |
-| **Atıf Sistemleri** | Chicago Notes-Bibliography, APA 7, Harvard, IEEE, OSCOLA, Vancouver |
-| **Üniversiteler** | ODTÜ, İTÜ, Boğaziçi, Hacettepe, Ankara Üniversitesi, Ankara Sosyal Bilimler Üniversitesi |
-| **Tez Türleri** | Yüksek Lisans, Doktora |
-| **Diller** | Türkçe, İngilizce, Almanca |
+| Kural | Ne demek |
+|-------|----------|
+| **Kaynaksız yazım yasak** | `/kaynaklar/` klasöründe PDF yoksa o cümle yazılmaz |
+| **Kartopu zorunlu** | Her kaynağın dipnotları taranır, yeni kaynaklar keşfedilir |
+| **Kaynak uydurma yasak** | AI hiçbir zaman kafadan kaynak uyduramaz |
+| **Danışman onayı atlanamaz** | Başlık (Faz 1) ve yapı (Faz 4) danışman olmadan ilerlemez |
+| **Oturum sonu commit** | Her oturum sonunda değişiklikler kaydedilir |
 
 ---
 
 ## Sıkça Sorulan Sorular
 
-**Bu sistem hangi AI'larla çalışır?**
-Claude (Code veya API), ChatGPT, Gemini, ve Ollama üzerindeki yerel modeller (Qwen 2.5 72B, Llama 3.1 70B önerilir). Slash command'lar Claude Code'a özgüdür; diğer sistemlerde dosyayı manuel oku komutu ver.
+**GitHub hesabı gerekiyor mu?**
+Hayır. ZIP olarak indirip kullanabilirsin. GitHub hesabı yalnızca repoyu güncellemek istersen gerekir.
 
-**Context window yetmezse ne olur?**
-`MEMORY.md` ve `DURUM_OZETI.md` tam olarak bu sorunu çözmek için tasarlandı. Yeni oturum başında bu iki dosyayı okuyan AI tam bağlamı yeniden kazanır. Küçük context window'lu modellerde (8K altı) her alt bölümü ayrı oturumda işle.
+**Her oturumda ne kadar süre harcamalıyım?**
+Faz 3 ve 6 için 90-120 dakikalık oturumlar idealdir. Context window dolmadan kapattığında AI kaldığı yeri kaydeder.
 
-**Danışmanım farklı bir format istiyor, uyarlanabilir mi?**
-Evet. Faz 0'da üniversite ve format kuralları toplanır. `tezprotokol.md` içinde danışman tercihlerine özel bölüm var. `TERMINOLOJI.md`'ye proje özgü kurallar eklenebilir.
+**Danışmanım bu sistemi bilmek zorunda mı?**
+Hayır. Danışmanın gördüğü şey: sana gelen dosyalar (bölüm taslakları, yapı planı). TezAtlas'ı kullandığını bilmesi gerekmiyor.
 
-**Türkçe / İngilizce / Almanca tez destekleniyor mu?**
-Evet. Sistem bilingualdir (TR/EN belgelenmiş). Almanca tez için dil paketi mevcuttur.
+**AI tezi benim yerime mi yazıyor?**
+Hayır — her iddia, her argüman, her kaynak seçimi senindir. AI yapıyı kurar, kaynakları bulur, notları düzenler ve kuralları uygular. Ama "ne savunuyorsun" sorusuna sen cevap verirsin.
 
-**Kaynaklarımı nereden temin edeceğim?**
-Önce üniversite kütüphanesi VPN'ine bak. Sonra Anna's Archive, CORE, SSRN, arXiv, ResearchGate, Unpaywall dene. Bulunamayan kaynaklar için sistem seni yönlendirir.
+**Tezim çok farklı bir disiplindeyse?**
+TezAtlas 8 disiplini destekler: Hukuk, Sosyal Bilimler, Mühendislik, Fen Bilimleri, Tıp, İşletme, Eğitim, Beşeri Bilimler. Faz 0'da disiplinini söylediğinde o disipline özgü kurallar yüklenir.
+
+**Atıf sistemimi bilmiyorum?**
+Faz 0'da "bilmiyorum" de. AI danışmanının muhtemelen beklediği sistemi önerir, onaylatmana yardım eder.
+
+**Türkçe-İngilizce karışık tez yazabilir miyim?**
+Evet. Faz 0'da tez dilini belirtirsin. Sistem bilingual çalışır.
+
+---
+
+## Desteklenen Yapılandırmalar
+
+| Kategori | Seçenekler |
+|----------|-----------|
+| **AI Araçları** | Claude Code, Claude API, ChatGPT, Gemini, Ollama (Qwen 2.5 72B+) |
+| **İşletim Sistemi** | macOS, Linux, Windows (Git Bash / WSL) |
+| **Disiplinler** | Hukuk, Sosyal Bilimler, Mühendislik, Fen Bilimleri, Tıp, İşletme, Eğitim, Beşeri Bilimler |
+| **Atıf Sistemleri** | Chicago Notes-Bibliography, APA 7, Harvard, IEEE, OSCOLA, Vancouver |
+| **Üniversiteler** | ODTÜ, İTÜ, Boğaziçi, Hacettepe, Ankara Üniversitesi, Ankara Sosyal Bilimler |
+| **Tez Türleri** | Yüksek Lisans, Doktora |
+| **Tez Dilleri** | Türkçe, İngilizce, Almanca |
 
 ---
 
 ## Katkı
 
-Yeni üniversite, disiplin veya atıf sistemi eklemek için `CONTRIBUTING.md` dosyasına bakın.
+Yeni üniversite formatı, disiplin modülü veya atıf sistemi eklemek için `CONTRIBUTING.md` dosyasına bakın.
 
 ---
 
 ## Lisans
 
-MIT
+MIT — Serbestçe kullanabilir, değiştirebilir, paylaşabilirsiniz.
