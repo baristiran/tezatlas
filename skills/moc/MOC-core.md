@@ -14,6 +14,7 @@ cluster_nodes:
   - skills/core/quality-control.md
   - skills/core/source-policy.md
   - skills/core/academic-integrity.md
+  - skills/core/error-recovery.md
 used_by:
   - skills/INDEX.md
 language: bilingual
@@ -35,3 +36,4 @@ Her TezAtlas oturumu iki değiştirilemez sınırla çevrilir: [[iron-rules]] ne
 | Kalite Kontrol | Bölüm sonu ve tez geneli kontrol listeleri | [[quality-control]] |
 | Kaynak Politikası | Faza göre web/yerel kaynak matrisi, intihal önleme | [[source-policy]] |
 | Akademik Dürüstlük | AI kullanım politikası, danışman kontrol noktaları | [[academic-integrity]] |
+| Hata Kurtarma | 7 hata senaryosu için kurtarma protokolleri | [[error-recovery]] |

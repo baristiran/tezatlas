@@ -3,7 +3,7 @@ title: "MOC — Phases Cluster"
 title_tr: "MOC — Fazlar Kümesi"
 node_type: moc
 cluster: phases
-description: "Navigation hub for all 8 thesis phases. Each phase node gates into the next. Phase 3 is a loop, not a linear step — it continues until saturation."
+description: "Navigation hub for all 8 thesis phases. Each phase node gates into the next. Phase 3 is a loop until saturation. Phase 4 uses [[argument-mapping]] technique to derive structure from notes."
 description_tr: "8 tez fazının tamamı için navigasyon merkezi. Her faz bir sonrakine geçişi kilitler. Faz 3 doğrusal değil döngüdür — doygunluk algılanana kadar sürer."
 tags: [moc, phases, navigation, workflow, sequential, phase-gated]
 cluster_nodes:

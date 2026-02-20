@@ -21,6 +21,7 @@ links_to:
   - skills/templates/tpl-durum-ozeti.md
   - skills/templates/tpl-dersler.md
   - skills/templates/tpl-terminoloji.md
+  - skills/templates/tpl-tezprotokol.md
   - skills/moc/MOC-citations.md
 used_by:
   - skills/moc/MOC-phases.md
@@ -39,18 +40,19 @@ Faz 0-4'teki tüm bilgileri birleştirerek projeye özgü dosyalar üretmek. Bu 
 ## Üretilen Dosyalar
 
 **1. tezprotokol.md** — Projeye özel yazım protokolü:
-- Proje kimliği (Faz 0'dan)
-- Tez başlığı, anahtar kavramlar, araştırma soruları (Faz 1'den)
-- Kaynak politikası (evrensel kurallar + projeye özel)
-- Atıf sistemi (seçilen sisteme göre detaylı formatlar — [[MOC-citations]]'dan)
-- Tez yapısı ve dosya haritası (Faz 4'ten)
-- Teorik çerçeve özeti (Faz 3'teki okumalardan)
-- Terminoloji sözlüğü başlangıcı
-- Metodoloji detayı
-- Yazım standartları (üniversite formatı + akademik dil)
-- Uzunluk hedefleri (bölüm bazlı)
-- Oturum planı
-- Kalite kontrol listeleri
+
+Şablon: [[tpl-tezprotokol]] — bu şablonu açarak aşağıdaki bilgileri doldur:
+
+- Proje kimliği (Faz 0'dan — proje_kimlik.md)
+- Tez başlığı, anahtar kavramlar, araştırma soruları (Faz 1'den — konu_kesfi.md)
+- Tez yapısı ve dosya haritası (Faz 4'ten — yapi_taslagi.md)
+- Kaynak politikası (evrensel kurallar + projeye özel istisnalar)
+- Atıf sistemi detaylı format örnekleri ([[MOC-citations]]'dan)
+- Yazım standartları (üniversite şablonundan)
+- Bölüm bazlı uzunluk hedefleri
+- Teorik çerçeve özeti (Faz 3 okumalarından)
+- Kritik uyarılar (başlangıçta boş, DERSLER.md'den dolar)
+- Oturum planı (6 dosya oku, 5 dosya güncelle)
 
 **2. CLAUDE.md** — Her oturumda otomatik yüklenen kısa özet:
 - Projenin ne olduğu (1 paragraf)

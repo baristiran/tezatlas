@@ -16,12 +16,13 @@ links_to:
   - skills/moc/MOC-universities.md
   - skills/moc/MOC-citations.md
   - skills/templates/tpl-proje-kimlik.md
+  - templates/universities/ornek.yaml
   - skills/core/academic-integrity.md
 used_by:
   - skills/moc/MOC-phases.md
   - skills/phases/phase-1-topic.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Faz 0 — Kimlik Toplama / Phase 0 — Identity Collection
@@ -68,8 +69,13 @@ Projenin temel kimlik bilgilerini toplamak. Bu bilgiler tüm sonraki fazlarda ku
 
 ## Yükleme Adımları
 
-1. [[MOC-universities]] üzerinden üniversite şablonunu yükle (varsa)
-   - Yoksa: kullanıcıdan tez yazım kılavuzu veya format bilgisi iste
+1. [[MOC-universities]] üzerinden üniversite şablonunu yükle
+   - **Listede varsa:** doğrudan yükle (ODTÜ, İTÜ, Boğaziçi, Hacettepe, Ankara, ASBÜ)
+   - **Listede yoksa → Otomatik Türetme:**
+     a. `templates/universities/ornek.yaml` dosyasını aç
+     b. Kullanıcıya sor: "Üniversitenizin tez yazım kılavuzu var mı? PDF veya link paylaşabilirsiniz."
+     c. Kılavuz paylaşıldıysa → ilgili alanları (kenar boşlukları, yazı tipi, satır aralığı) kılavuzdan oku → ornek.yaml'ı doldur
+     d. Kılavuz yoksa → standart değerleri kullan ve kullanıcıyı bildir: "Üniversite kılavuzunuz eklendiğinde güncelleyebiliriz."
 2. [[MOC-disciplines]] üzerinden disiplin modülünü yükle (tek bir modül)
 3. Disipline göre varsayılan atıf sistemini tespit et; [[MOC-citations]] üzerinden rehberi yükle
 

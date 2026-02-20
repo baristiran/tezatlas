@@ -2,8 +2,8 @@
 title: "Git Workflow — Version Control Strategy"
 title_tr: "Git İş Akışı — Versiyon Kontrol Stratejisi"
 node_type: tooling
-description: "Git commit strategy for thesis projects. Why version control is mandatory, commit message conventions, and optional branch strategy."
-description_tr: "Tez projeleri için git commit stratejisi. Versiyon kontrolü neden zorunlu, commit mesaj kuralları ve isteğe bağlı branch stratejisi."
+description: "Git commit strategy for thesis projects. Git is MANDATORY — not optional. Commit message conventions and branch strategy."
+description_tr: "Tez projeleri için git commit stratejisi. Git ZORUNLUDUR — isteğe bağlı değil. Commit mesaj kuralları ve branch stratejisi."
 tags: [tooling, git, version-control, commit-strategy, phase-5, phase-6]
 links_to:
   - skills/phases/phase-5-protocol.md
@@ -12,7 +12,7 @@ used_by:
   - skills/phases/phase-5-protocol.md
   - skills/techniques/session-structure.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Git İş Akışı / Git Workflow
@@ -46,7 +46,7 @@ git add .
 git commit -m "TezAtlas: Proje kurulumu tamamlandı — Faz 0-5"
 ```
 
-## Branch Stratejisi (İsteğe Bağlı)
+## Branch Stratejisi
 
 ```
 main        → onaylanmış metin (danışman gördü)
@@ -54,4 +54,4 @@ draft       → çalışma dalı (aktif yazım)
 experiment  → deneysel değişiklikler (danışman onayı bekleyen)
 ```
 
-Branch kullanmak istemeyenler için: tek `main` branch, her oturum commit, gerektiğinde `git log` ile geçmişe dön.
+Git yeni kullananlar için başlangıç önerisi: tek `main` branch, her oturum commit, gerektiğinde `git log` ile geçmişe dön. Branch stratejisi isteğe bağlı — ama git'in kendisi değil ([[iron-rules]] Kural 6).

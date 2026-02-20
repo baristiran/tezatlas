@@ -1,29 +1,31 @@
 ---
-title: "Iron Rules — The 5 Immutable Constraints"
-title_tr: "Demir Kurallar — 5 Değiştirilemez Kısıt"
+title: "Iron Rules — The 6 Immutable Constraints"
+title_tr: "Demir Kurallar — 6 Değiştirilemez Kısıt"
 node_type: foundation
-description: "Five inviolable constraints governing every TezAtlas session regardless of phase or discipline. If any action would violate these rules, stop and redirect."
-description_tr: "Her TezAtlas oturumunda, faz veya disiplin gözetilmeksizin geçerli olan 5 değiştirilemez kısıt. Herhangi bir eylem bu kurallardan birini ihlal ediyorsa dur ve yeniden yönlendir."
+priority: critical
+description: "Six inviolable constraints governing every TezAtlas session regardless of phase or discipline. If any action would violate these rules, stop and redirect."
+description_tr: "Her TezAtlas oturumunda, faz veya disiplin gözetilmeksizin geçerli olan 6 değiştirilemez kısıt. Herhangi bir eylem bu kurallardan birini ihlal ediyorsa dur ve yeniden yönlendir."
 tags: [iron-rules, constraints, anti-fabrication, always-active, foundation]
 links_to:
   - skills/core/source-policy.md
   - skills/core/academic-integrity.md
   - skills/techniques/snowball-sampling.md
   - skills/tooling/annas-archive.md
+  - skills/tooling/git-workflow.md
 used_by:
   - skills/moc/MOC-core.md
   - skills/phases/phase-6-writing.md
   - .claude/commands/tez-baslat.md
   - .claude/commands/thesis-start.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Demir Kurallar / Iron Rules
 
-Bu 5 kural her oturumda, her fazda ve her disiplinde geçerlidir. Herhangi bir eylem bu kurallardan birini ihlal ediyorsa dur ve yeniden yönlendir.
+Bu 6 kural her oturumda, her fazda ve her disiplinde geçerlidir. Herhangi bir eylem bu kurallardan birini ihlal ediyorsa dur ve yeniden yönlendir.
 
-These 5 rules apply in every session, every phase, and every discipline. If any action would violate one of them, stop and redirect.
+These 6 rules apply in every session, every phase, and every discipline. If any action would violate one of them, stop and redirect.
 
 ---
 
@@ -67,3 +69,11 @@ Fabricating sources from training memory is FORBIDDEN. Guessing page numbers is 
 Her kritik fazın sonunda danışmana danışılıp danışılmadığı sorulur. Danışman onayı olmadan büyük yapısal kararlar alınmaz. Kontrol noktası takvimi [[academic-integrity]] düğümündedir.
 
 At every critical phase end, the agent asks whether the advisor has been consulted. Major structural decisions require advisor approval. The checkpoint schedule is in [[academic-integrity]].
+
+---
+
+## Kural 6: Her Oturum Sonu Git Commit ZORUNLU / Git Commit is Mandatory After Every Session
+
+Her yazım oturumunun sonunda `git commit` yapılır. Commit atılmadan oturum kapatılmaz. Tez metni versiyon kontrolü olmadan büyümez — danışman "eski hal daha iyiydi" dediğinde git olmadan geri dönmek imkansızdır.
+
+A `git commit` is made at the end of every writing session. The session is not closed without a commit. Thesis text must not grow without version control — without git, reverting to an older version when the advisor requests it is impossible. See [[git-workflow]] for commit message conventions.

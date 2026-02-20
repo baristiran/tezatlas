@@ -2,7 +2,7 @@
 title: "PDF Reading — Pre-check and Handling"
 title_tr: "PDF Okuma — Ön Kontrol ve İşleme"
 node_type: technique
-description: "Pre-check protocol before reading any PDF: detect text-based vs scanned, handle very long documents by using table of contents, report unreadable files."
+description: "Pre-check protocol before reading any PDF: detect text-based vs scanned, try Anna's Archive / Google Books / HathiTrust for text version before giving up, handle very long documents via table of contents."
 description_tr: "Her PDF okunmadan önce ön kontrol protokolü: metin tabanlı mı taranmış mı tespit et, çok uzun belgeleri içindekiler üzerinden yönet, açılamayan dosyaları raporla."
 tags: [pdf-reading, pre-check, ocr, long-documents, phase-3, phase-6]
 links_to:
@@ -13,7 +13,7 @@ used_by:
   - skills/phases/phase-3-reading.md
   - skills/phases/phase-6-writing.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # PDF Okuma Ön Kontrol / PDF Reading Pre-check
@@ -26,10 +26,13 @@ Her PDF okunmadan önce çalıştır:
 AI PDF'i açar:
   ├─ Metin tabanlı, okunabilir → devam
   │
-  ├─ Taranmış / görüntü bazlı → raporla:
-  │    "Bu PDF taranmış (image-based), metin çıkarılamıyor.
-  │     OCR gerekli veya metin tabanlı versiyon aranmalı."
-  │    → Anna's Archive'da metin tabanlı versiyon ara
+  ├─ Taranmış / görüntü bazlı →
+  │    1. Anna's Archive'da metin tabanlı versiyon ara → [[annas-archive]]
+  │    2. Bulunamazsa → Google Books / HathiTrust'ta açık erişim versiyonu ara
+  │    3. Bulunamazsa → kullanıcıya bildir:
+  │         "Bu PDF taranmış, metin çıkarılamıyor.
+  │          Metin tabanlı versiyon bulunamadı.
+  │          Alternatif: OCR araçları (tesseract, Adobe Acrobat Pro)."
   │
   ├─ Çok uzun (500+ sayfa) →
   │    1. İçindekiler sayfasından ilgili bölümleri tespit et

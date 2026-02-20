@@ -13,6 +13,7 @@ outputs:
   - KAYNAK_HARITASI.md
 links_to:
   - skills/moc/MOC-disciplines.md
+  - skills/techniques/argument-mapping.md
   - skills/templates/tpl-yapi-taslagi.md
   - skills/templates/tpl-kaynak-haritasi.md
   - skills/core/academic-integrity.md

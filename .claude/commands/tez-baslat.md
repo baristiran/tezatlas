@@ -5,7 +5,10 @@ Bu bir akademik tez yazım projesidir. Aşağıdaki talimatları takip et.
 ## Başlangıç
 
 1. `skills/INDEX.md` dosyasını bul ve frontmatter'ını oku — bu beceri grafının haritası.
-2. `skills/core/iron-rules.md` oku — her oturumda geçerli 5 kural.
+2. Aşağıdaki **zorunlu core node'ları** sırayla oku (`priority: critical`):
+   - `skills/core/iron-rules.md` — her oturumda geçerli 6 kural
+   - `skills/core/source-policy.md` — kaynak erişim politikası
+   - `skills/core/context-management.md` — oturum bellek sistemi
 3. Projenin mevcut durumunu kontrol et:
    - `proje_kimlik.md` var mı? → VARSA bu yeni proje değil, mevcut projeye devam et.
    - Yoksa → Faz 0'dan başla: `skills/phases/phase-0-identity.md` oku.
@@ -35,6 +38,7 @@ Eğer proje zaten kurulmuşsa — `skills/core/context-management.md` sistemini 
 3. **AI önce kendisi indirir.** Anna's Archive veya açık erişimden dene. İndiremezse kullanıcıya sor.
 4. **Uydurma atıf = akademik suç.** Sadece /kaynaklar/ klasöründeki PDF'lerden atıf yap.
 5. **Danışman kontrol noktaları atlanamaz.** Her kritik fazda danışman onayı sor.
+6. **Her oturum sonu git commit zorunludur.** Commit atılmadan oturum kapatılmaz.
 
 ## Beceri Grafı Navigasyonu
 

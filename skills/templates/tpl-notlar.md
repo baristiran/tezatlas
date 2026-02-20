@@ -4,7 +4,7 @@ title_tr: "Şablon — _notlar.md (Faz 3 / 6 Okuma Notları)"
 node_type: template
 produces_file: _notlar.md
 associated_phase: 3
-description: "Standardized reading notes file. One file per section or source group. Contains direct quote candidates with page numbers, paraphrase arguments, snowball-discovered references, and a writing plan."
+description: "Standardized reading notes file. One file per section or source group. Each note entry includes target section and research question fields to directly connect reading to writing."
 description_tr: "Standart okuma notları dosyası. Bölüm veya kaynak grubu başına bir dosya. Sayfa numaralı doğrudan alıntı adayları, parafraz argümanları, kartopu keşfedilen referanslar ve yazım planı içerir."
 tags: [template, phase-3, phase-6, reading-notes, writing-plan, snowball]
 links_to:
@@ -16,7 +16,7 @@ used_by:
   - skills/phases/phase-6-writing.md
   - skills/techniques/pdf-reading.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Şablon: _notlar.md
@@ -31,10 +31,12 @@ version: "2.0"
 ## Kaynak 1: [Yazar, Kısa Başlık, Yıl]
 **PDF:** [dosya_adi.pdf]
 **Kalite:** [hakemli makale / kitap / rapor / çalışma kağıdı]
+**Hedef bölüm:** [X.Y — hangi alt bölümde kullanılacak]
+**Araştırma sorusu:** [RQ1 / RQ2 / RQ3 — hangi soruyu yanıtlıyor]
 
 ### Doğrudan alıntı adayları (sayfa numaralı)
-- s.46: "Exact quote here..." — [nerede kullanılacak / hangi argüman]
-- s.112: "Another quote..." — [kullanım notu]
+- s.46: "Exact quote here..." — Hedef: [X.Y] — RQ: [RQ1] — [kullanım notu]
+- s.112: "Another quote..." — Hedef: [X.Y] — RQ: [RQ2] — [kullanım notu]
 
 ### Parafraz için ana argümanlar (sayfa numaralı)
 - s.23-25: [argüman açıklaması — orijinal sözcükleri değil]

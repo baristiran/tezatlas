@@ -9,13 +9,14 @@ links_to:
   - skills/core/iron-rules.md
   - skills/tooling/annas-archive.md
   - skills/techniques/source-hunting.md
+  - skills/phases/phase-3-reading.md
 used_by:
   - skills/moc/MOC-core.md
   - skills/phases/phase-1-topic.md
   - skills/phases/phase-2-sources.md
   - skills/phases/phase-6-writing.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Kaynak Politikası / Source Policy
@@ -78,3 +79,26 @@ Birincil bulunamıyorsa şeffaf olunur:
 ```
 
 Kaynak bulamıyorsan [[annas-archive]] ve [[source-hunting]] düğümlerine bak.
+
+## Kaynak Kalite Hiyerarşisi / Source Quality Hierarchy
+
+Genel sıralama (yüksekten düşüğe). Disiplin modülleri bunu override edebilir — bkz. [[MOC-disciplines]]:
+
+| Sıra | Kaynak Türü | Açıklama |
+|:----:|------------|---------|
+| 1 | Hakemli dergi makalesi | Peer-reviewed, en yüksek akademik güvenilirlik |
+| 2 | Akademik kitap (monografi) | Hakemli yayınevi, tek konu derinlemesine |
+| 3 | Düzenlenmiş kitap bölümü | Hakemli editör + bölüm yazarı |
+| 4 | Resmi kurumsal rapor | BIS, IMF, ECB, resmi devlet kurumları |
+| 5 | Çalışma kağıdı (working paper) | Hakemli değil ama kayıtlı (SSRN, arXiv) |
+| 6 | Tez / Doktora | Hakemli jüri tarafından savunulmuş |
+| 7 | Gazete / Haber | Birincil olay kaynağı, analiz için değil |
+| 8 | Blog / Web sitesi | Akademik çalışmada kaynak olarak kullanılmaz |
+
+**Disipline özgü istisnalar:**
+- **Hukuk:** Monografiler ve hukuk dergisi makaleleri eşit ağırlıkta; kanun metinleri ve mahkeme kararları ayrı kategori
+- **Tıp:** Klinik kılavuzlar ve meta-analizler en üst sırada; vaka raporları düşük hiyerarşide
+- **Mühendislik:** Konferans bildirileri (IEEE, ACM) dergi makalesiyle eşdeğer sayılabilir
+
+Bir bölümde yalnızca düşük kalite kaynak varsa (4. sıra ve altı) uyarı ver:
+"Bu bölüm için hakemli makale veya akademik kitap eklenmeli."

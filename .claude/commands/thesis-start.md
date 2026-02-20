@@ -5,7 +5,10 @@ This is an academic thesis writing project. Follow the instructions below.
 ## Getting Started
 
 1. Find and read `skills/INDEX.md` — this is your skill graph map.
-2. Read `skills/core/iron-rules.md` — 5 rules that apply in every session.
+2. Read the following **mandatory core nodes** in order (`priority: critical`):
+   - `skills/core/iron-rules.md` — 6 rules that apply in every session
+   - `skills/core/source-policy.md` — source access policy
+   - `skills/core/context-management.md` — session memory system
 3. Check the current project state:
    - Does `proje_kimlik.md` exist? → If YES, this is an existing project. Continue from where you left off.
    - If NO → Start from Phase 0: read `skills/phases/phase-0-identity.md`.
@@ -35,6 +38,7 @@ Read `skills/phases/phase-0-identity.md` and ask Phase 0 questions. Then:
 3. **AI downloads first.** Try Anna's Archive or open access. If it can't, ask the user.
 4. **Fabricated citations = academic misconduct.** Only cite from PDFs in /kaynaklar/.
 5. **Advisor checkpoints cannot be skipped.** Ask about advisor approval at every critical phase.
+6. **Git commit is mandatory after every session.** The session is not closed without a commit.
 
 ## Skill Graph Navigation
 

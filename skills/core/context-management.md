@@ -16,7 +16,7 @@ used_by:
   - .claude/commands/tez-baslat.md
   - .claude/commands/thesis-start.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Context Yönetimi / Context Management
@@ -45,11 +45,11 @@ Tam oturum ritüeli için [[session-structure]] düğümüne bak.
 ## Oturum Sonunda Güncellenen Dosyalar
 
 ```
-1. MEMORY.md          ← ilerleme + son dipnot + kelime sayısı
-2. DURUM_OZETI.md     ← detaylı durum raporu (şablon: [[tpl-durum-ozeti]])
+1. MEMORY.md          ← SAYISAL veriler: kelime sayısı, son dipnot no, tamamlanan bölüm sayısı
+2. DURUM_OZETI.md     ← NARRATİF durum: ne yapıldı, ne bekliyor, sonraki adım (şablon: [[tpl-durum-ozeti]])
 3. DERSLER.md         ← varsa yeni dersler (şablon: [[tpl-dersler]])
 4. TERMINOLOJI.md     ← varsa yeni terimler (şablon: [[tpl-terminoloji]])
-5. git commit         ← versiyon güvenliği
+5. git commit         ← ZORUNLU — bkz. [[iron-rules]] Kural 6
 ```
 
 ## Oturum Sınırı Kararları
@@ -72,3 +72,12 @@ Aylar sonra bile AI şunları okur ve tam durumu bilir:
 ## Öz-İyileştirme Döngüsü (DERSLER.md)
 
 Kullanıcı veya danışmandan gelen **her düzeltme** DERSLER.md'ye yazılır. Aynı hata iki kez tekrarlanmaz. Her oturum başında DERSLER.md okunur. Kurallar zaman içinde birikir — AI projeye özgü deneyim kazanır.
+
+## MEMORY.md vs DURUM_OZETI.md — Fark
+
+| Dosya | Rol | Format | Okuma Amacı |
+|-------|-----|--------|-------------|
+| `MEMORY.md` | Sayısal ilerleme sayaçları | Makine-okunabilir, kısa | "Kaçıncı dipnottayız? Kaç kelime yazıldı?" |
+| `DURUM_OZETI.md` | Narrative durum raporu | İnsan-okunabilir, prose | "Aylar sonra nerede kalmıştık?" |
+
+İkisini karıştırma: MEMORY.md'ye prose yazma, DURUM_OZETI.md'ye sayı gömme.
