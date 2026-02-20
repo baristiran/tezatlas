@@ -10,7 +10,9 @@ Thumbs.db
 .idea/
 
 # Proje çalışma dosyaları (her kullanıcıya özel)
-kaynaklar/
+kaynaklar/*
+!kaynaklar/.gitkeep
+!kaynaklar/README.md
 *.pdf
 *.epub
 

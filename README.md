@@ -80,9 +80,9 @@ Ekranda şu mesajı görürsen kurulum tamamdır:
 
 Belgelerim veya Masaüstü'nde yeni bir klasör oluştur. Adını tezin konusuyla ilgili bir şey yap. Örnek: `hukuk-tezim`
 
-**Adım 4 — Kaynaklar klasörü oluştur**
+**Adım 4 — Kaynaklar klasörü (opsiyonel ön hazırlık)**
 
-Az önce oluşturduğun klasörün içine `kaynaklar` adında bir alt klasör oluştur. PDF kaynaklarını buraya koyacaksın.
+İstersen tez klasörünün içine `kaynaklar` adında bir alt klasör oluştur. PDF kaynaklarını buraya koyacaksın. Oluşturmazsan sorun değil: TezAtlas Faz 0'da klasörü otomatik oluşturur.
 
 ```
 hukuk-tezim/
@@ -167,6 +167,8 @@ AI, sanki `/tez-baslat` yazılmış gibi süreci başlatacak.
 
 Bunları cevapladıktan sonra AI süreci başlatır.
 
+Faz 0 sırasında AI `/kaynaklar/` klasörünü yoksa otomatik oluşturur ve literatür taramasında keşfettiğin PDF yayınları bu klasöre eklemeni ister.
+
 ---
 
 ## 8 Faz — Tezin Nasıl İlerler
@@ -179,6 +181,7 @@ TezAtlas tez sürecini 8 adıma böler. Her adım tamamlanmadan sonrakine geçil
 **Süre:** 15-30 dakika
 
 AI senden temel bilgileri toplar ve `proje_kimlik.md` dosyasını oluşturur. Bu dosya üniversitene, programına, danışmanına ve atıf sistemine özel kuralları içerir.
+Ek olarak `/kaynaklar/` klasörü yoksa otomatik oluşturulur.
 
 **Sen ne yaparsın:** Soruları cevapla.
 **AI ne üretir:** `proje_kimlik.md`
@@ -199,6 +202,7 @@ AI sana 5 farklı tez başlığı alternatifi sunar. Her biri için şunları g�
 **Önemli:** Başlığı danışmanına göster ve onayını al. Onay olmadan bir sonraki adıma geçme.
 
 **AI ne üretir:** `konu_kesfi.md`
+**Görünürlük:** AI bu dosyanın içeriğini konuşma/konsol içinde açıkça gösterir; dosyayı ayrıca açman gerekmez.
 
 ---
 

@@ -19,7 +19,7 @@ used_by:
   - skills/phases/phase-0-identity.md
   - skills/phases/phase-2-sources.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Faz 1 — Konu Keşfi ve Başlık / Phase 1 — Topic Discovery and Title
@@ -63,9 +63,13 @@ Seçilen başlığa göre 10-15 anahtar kavram çıkarılır (tez dilinde + İng
 - Araştırılabilir
 - Tez kapsamına sığar (YL: 3-5 soru, DR: 5-7 soru)
 
+**Adım 6 — Çıktıyı Konsolda Göster (Zorunlu)**
+`konu_kesfi.md` oluşturulduktan hemen sonra dosyanın tam içeriği kullanıcıya konsolda gösterilir. Kullanıcıdan dosyayı ayrıca açması beklenmez.
+
 ## Çıktı
 
 `konu_kesfi.md` oluşturulur — şablon: [[tpl-konu-kesfi]]
+Dosya yazıldıktan sonra içerik konsolda açıkça gösterilir.
 
 ## Danışman Kontrol Noktası
 

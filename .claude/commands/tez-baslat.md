@@ -26,10 +26,13 @@ Eğer proje zaten kurulmuşsa — `skills/core/context-management.md` sistemini 
 ## Yeni Proje Başlangıcı
 
 `skills/phases/phase-0-identity.md` oku ve Faz 0 sorularını sor. Sonra:
+- `/kaynaklar/` klasörü yoksa oluştur (`mkdir -p kaynaklar`) ve kullanıcıyı şu konuda yönlendir:
+  - "Literatür taramasında keşfettiğiniz yayınların PDF'lerini `/kaynaklar/` klasörüne ekleyin."
 - `skills/moc/MOC-universities.md` → üniversite şablonu yükle
 - `skills/moc/MOC-disciplines.md` → disiplin modülü yükle
 - `skills/moc/MOC-citations.md` → atıf rehberi yükle
 - `skills/phases/phase-1-topic.md` oku → Faz 1'e geç
+- Faz 1'de `konu_kesfi.md` üretildikten sonra dosyanın tam içeriğini konsolda kullanıcıya göster (dosyayı ayrıca açmasını isteme).
 
 ## Demir Kurallar (Her Zaman Geçerli)
 

@@ -22,7 +22,7 @@ used_by:
   - skills/moc/MOC-phases.md
   - skills/phases/phase-1-topic.md
 language: bilingual
-version: "2.1"
+version: "2.2"
 ---
 
 # Faz 0 — Kimlik Toplama / Phase 0 — Identity Collection
@@ -47,7 +47,17 @@ Projenin temel kimlik bilgilerini toplamak. Bu bilgiler tüm sonraki fazlarda ku
 9. Teslim tarihi
 10. Üniversitenin tez yazım kılavuzu (PDF olarak eklenebilir)
 11. Atıf sistemi tercihi: Chicago, APA 7, Harvard, OSCOLA, IEEE, Vancouver
-12. Mevcut kaynaklar (`/kaynaklar/` klasörü dolu mu boş mu?)
+
+## Zorunlu Otomasyon Adımı
+
+Faz 0 sırasında AI, `/kaynaklar/` klasörünü **boş olsa bile** oluşturur:
+
+```bash
+mkdir -p kaynaklar
+```
+
+Ardından kullanıcıya şu yönlendirme yapılır:
+"Literatür taramasında keşfettiğiniz yayınların PDF'lerini `/kaynaklar/` klasörüne ekleyin."
 
 ## Otomatik Tespitler
 
@@ -69,20 +79,17 @@ Projenin temel kimlik bilgilerini toplamak. Bu bilgiler tüm sonraki fazlarda ku
 
 ## Yükleme Adımları
 
-1. [[MOC-universities]] üzerinden üniversite şablonunu yükle
+1. `/kaynaklar/` klasörünü oluştur (yoksa) ve kullanıcıyı kaynak eklemeye teşvik et
+2. [[MOC-universities]] üzerinden üniversite şablonunu yükle
    - **Listede varsa:** doğrudan yükle (ODTÜ, İTÜ, Boğaziçi, Hacettepe, Ankara, ASBÜ)
    - **Listede yoksa → Otomatik Türetme:**
      a. `templates/universities/ornek.yaml` dosyasını aç
      b. Kullanıcıya sor: "Üniversitenizin tez yazım kılavuzu var mı? PDF veya link paylaşabilirsiniz."
      c. Kılavuz paylaşıldıysa → ilgili alanları (kenar boşlukları, yazı tipi, satır aralığı) kılavuzdan oku → ornek.yaml'ı doldur
      d. Kılavuz yoksa → standart değerleri kullan ve kullanıcıyı bildir: "Üniversite kılavuzunuz eklendiğinde güncelleyebiliriz."
-2. [[MOC-disciplines]] üzerinden disiplin modülünü yükle (tek bir modül)
-3. Disipline göre varsayılan atıf sistemini tespit et; [[MOC-citations]] üzerinden rehberi yükle
+3. [[MOC-disciplines]] üzerinden disiplin modülünü yükle (tek bir modül)
+4. Disipline göre varsayılan atıf sistemini tespit et; [[MOC-citations]] üzerinden rehberi yükle
 
 ## Çıktı
 
 `proje_kimlik.md` oluşturulur — şablon: [[tpl-proje-kimlik]]
-
-## Danışman Kontrol Noktası
-
-"Bu bilgileri danışmanınızla paylaştınız mı? Konu hakkında danışmanınızın ilk görüşü nedir?"

@@ -38,5 +38,5 @@ Türkiye özelinde Dijital Türk Lirası projesi, kavramsal tartışma aşaması
 Güncel uluslararası politika belgelerinde hukuki boşlukların özellikle ihraç yetkisi, platform işletimi, aracı hizmet sağlayıcıların statüsü, işlem sınırları, programlanabilirlik ve mahremiyet başlıklarında yoğunlaştığı görülmektedir. Buna rağmen Türkçe literatürde kamu hukuku merkezli, bütüncül bir "mimari model" önerisi sınırlıdır. Bu tez, Dijital Türk Lirası bağlamında normatif bir model geliştirerek anayasal ilkeler, idare hukuku araçları ve finansal düzenleme mekanizmalarını tek çatı altında sistematize etmeyi hedeflemektedir.
 
 ## Danışman Onayı
-- [ ] Başlık danışman tarafından onaylandı
-- [ ] Araştırma soruları danışman tarafından onaylandı
+- [x] Başlık danışman tarafından onaylandı
+- [x] Araştırma soruları danışman tarafından onaylandı

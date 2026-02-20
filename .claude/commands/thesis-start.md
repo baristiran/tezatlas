@@ -26,10 +26,13 @@ Apply the `skills/core/context-management.md` system:
 ## Starting a New Project
 
 Read `skills/phases/phase-0-identity.md` and ask Phase 0 questions. Then:
+- If `/kaynaklar/` does not exist, create it (`mkdir -p kaynaklar`) and prompt the user:
+  - "Add the publications you discover during literature review as PDFs under `/kaynaklar/`."
 - `skills/moc/MOC-universities.md` → load university template
 - `skills/moc/MOC-disciplines.md` → load discipline module
 - `skills/moc/MOC-citations.md` → load citation guide
 - Read `skills/phases/phase-1-topic.md` → proceed to Phase 1
+- In Phase 1, after generating `konu_kesfi.md`, print the full file content in the console so the user does not need to open the file manually.
 
 ## Iron Rules (Always Apply)
 

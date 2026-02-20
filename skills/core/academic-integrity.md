@@ -2,8 +2,8 @@
 title: "Academic Integrity — AI Policy and Advisor Checkpoints"
 title_tr: "Akademik Dürüstlük — AI Politikası ve Danışman Kontrol Noktaları"
 node_type: foundation
-description: "TezAtlas is a writing assistant, not a ghostwriter. Defines student vs AI responsibilities, 7 mandatory advisor checkpoints, and university AI usage policy reminder."
-description_tr: "TezAtlas bir yazım asistanıdır, ghostwriter değil. Öğrenci ve AI sorumluluklarını, 7 zorunlu danışman kontrol noktasını ve üniversite AI kullanım politikası hatırlatmasını tanımlar."
+description: "TezAtlas is a writing assistant, not a ghostwriter. Defines student vs AI responsibilities, 6 mandatory advisor checkpoints, and university AI usage policy reminder."
+description_tr: "TezAtlas bir yazım asistanıdır, ghostwriter değil. Öğrenci ve AI sorumluluklarını, 6 zorunlu danışman kontrol noktasını ve üniversite AI kullanım politikası hatırlatmasını tanımlar."
 tags: [academic-integrity, advisor-checkpoints, ai-policy, foundation, always-active]
 links_to:
   - skills/core/iron-rules.md
@@ -14,7 +14,7 @@ used_by:
   - skills/phases/phase-4-structure.md
   - skills/phases/phase-6-writing.md
 language: bilingual
-version: "2.0"
+version: "2.1"
 ---
 
 # Akademik Dürüstlük / Academic Integrity
@@ -41,7 +41,6 @@ TezAtlas bir yazım asistanıdır, ghostwriter değildir.
 
 | Faz | Kontrol Noktası | Kritiklik |
 |-----|----------------|-----------|
-| Faz 0 sonu | Konu ve yaklaşım hakkında danışman görüşü | Yüksek |
 | Faz 1 sonu | Başlık ve araştırma soruları danışman onayı | Yüksek |
 | Faz 3 ortası | Okunan kaynaklar ve ilk bulgular paylaşımı | Orta |
 | Faz 4 sonu | İçindekiler taslağı danışman onayı | **KRİTİK — yazıma geçilemez** |
